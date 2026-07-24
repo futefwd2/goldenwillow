@@ -32,7 +32,30 @@ export default function FloorPage() {
     const towerId = location.state?.towerId || 1;
     const tower = data.find((t) => t.id === towerId) || data[0];
 
-    const singleFloor = tower?.floors?.[0];
+    const rawFloor = tower?.floors?.[0];
+    const singleFloor = rawFloor ? {
+        ...rawFloor,
+        id: floorNumber,
+        title: `FLOOR-${floorNumber}`,
+        units: rawFloor.units.map((unit: any) => {
+            const unitNum = unit.id % 100;
+            const dynamicId = floorNumber * 100 + unitNum;
+            return {
+                ...unit,
+                id: dynamicId,
+            };
+        })
+    } : null;
+
+    const mappedJodi = (tower as any).jodi?.map((jodiUnit: any) => {
+        const jodiNum = jodiUnit.id % 10;
+        const dynamicId = floorNumber * 100 + 90 + jodiNum;
+        return {
+            ...jodiUnit,
+            id: dynamicId,
+        };
+    });
+
     const floorImage = isRefugeFloor ? (tower.refugeImage || jasmineRefugeFloorPlan) : singleFloor?.image;
 
     const [hoveredUnit, setHoveredUnit] = useState<number | null>(null);
@@ -87,7 +110,7 @@ export default function FloorPage() {
                     </h3>
 
                     {activeJodiMode ? (
-                        (tower as any).jodi?.map((unit: any) => (
+                        mappedJodi?.map((unit: any) => (
                             <ul key={unit.id}>
                                 <li
                                     className={`
@@ -103,24 +126,20 @@ export default function FloorPage() {
                             </ul>
                         ))
                     ) : (
-                        [tower]?.map((e) => (
-                            e.floors.map((floor) => (
-                                floor.units.map((unit) => (
-                                    <ul key={unit.id}>
-                                        <li
-                                            className={`
-                    cursor-pointer transition-transform duration-200 mt-2 flex p-1 rounded-sm justify-between border-b pb-2 text-[12px]
-                    ${hoveredUnit === unit.id ? "scale-105 bg-slate-200" : "scale-100"}
-                `}
-                                            onMouseEnter={() => setHoveredUnit(unit.id)}
-                                            onMouseLeave={() => setHoveredUnit(null)}
-                                            onClick={() => setSelectedUnit(unit.id)}
-                                        >
-                                            <p>{unit.name}</p> <p>{unit.type}</p>
-                                        </li>
-                                    </ul>
-                                ))
-                            ))
+                        singleFloor.units.map((unit: any) => (
+                            <ul key={unit.id}>
+                                <li
+                                    className={`
+                                        cursor-pointer transition-transform duration-200 mt-2 flex p-1 rounded-sm justify-between border-b pb-2 text-[12px]
+                                        ${hoveredUnit === unit.id ? "scale-105 bg-slate-200" : "scale-100"}
+                                    `}
+                                    onMouseEnter={() => setHoveredUnit(unit.id)}
+                                    onMouseLeave={() => setHoveredUnit(null)}
+                                    onClick={() => setSelectedUnit(unit.id)}
+                                >
+                                    <p>{unit.name}</p> <p>{unit.type}</p>
+                                </li>
+                            </ul>
                         ))
                     )}
 
@@ -171,8 +190,8 @@ export default function FloorPage() {
                         width={singleFloor.imageSettings.imageWidth}
                         height={singleFloor.imageSettings.imageHeight}
                     />
-                    {activeJodiMode && (tower as any).jodi ? (
-                        (tower as any).jodi.map((jodiUnit: any) => (
+                    {activeJodiMode && mappedJodi ? (
+                        mappedJodi.map((jodiUnit: any) => (
                             <g key={jodiUnit.id}>
                                 {jodiUnit.polygons.map((pts: string, idx: number) => (
                                     <Tooltip

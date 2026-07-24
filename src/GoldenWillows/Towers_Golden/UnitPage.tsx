@@ -21,7 +21,19 @@ export default function UnitPage() {
     const tower = data.find((t) => t.id === towerId) || data[0];
     const floors = tower.floors;
     const allUnits = floors.flatMap((f: any) => f.units);
-    const singleUnit = id ? allUnits.find((u: any) => u.id === Number(id)) : allUnits[0];
+
+    // Extract floor number and unit number from the dynamic ID (e.g. 301 -> floorNum = 3, unitNum = 1)
+    const numericId = Number(id);
+    const floorNum = numericId ? Math.floor(numericId / 100) : 2;
+    const unitNum = numericId ? (numericId % 100) : 1;
+
+    // Find the typical unit matching the unit number
+    const typicalUnit = allUnits.find((u: any) => (u.id % 100) === unitNum) || allUnits[0];
+
+    const singleUnit = typicalUnit ? {
+        ...typicalUnit,
+        id: numericId,
+    } : null;
 
     const navigate = useNavigate();
 

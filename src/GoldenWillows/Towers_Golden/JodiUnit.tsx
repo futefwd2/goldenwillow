@@ -16,8 +16,17 @@ export default function JodiUnit() {
         }
         return rgbaStr;
     };
+    const numericId = Number(id);
+    const floorNum = numericId ? Math.floor(numericId / 100) : 2;
+    const jodiNum = numericId ? (numericId % 10) : 1; // e.g. 391 -> 1, 392 -> 2
+
     const jodiUnits = data.flatMap((t: any) => t.jodi || []);
-    const singleUnit = id ? jodiUnits.find((u: any) => u.id === Number(id)) : jodiUnits[0];
+    const typicalJodi = jodiUnits.find((u: any) => (u.id % 10) === jodiNum) || jodiUnits[0];
+
+    const singleUnit = typicalJodi ? {
+        ...typicalJodi,
+        id: numericId,
+    } : null;
 
     const navigate = useNavigate();
 
