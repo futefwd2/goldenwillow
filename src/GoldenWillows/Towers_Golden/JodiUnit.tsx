@@ -63,7 +63,7 @@ export default function JodiUnit() {
 
     return (
         <>
-            <section className="flex flex-col lg:flex-row gap-2 overflow-auto lg:overflow-hidden h-screen w-full p-2 bg-[#e8e8e8]">
+            <section className="flex flex-col lg:flex-row gap-2 overflow-auto lg:overflow-hidden h-screen w-full p-2 bg-[#e8e8e8] select-none">
                 <WithoutbgHeader />
 
                 {/* Left sidebar - rooms list for whichever layout */}

@@ -63,7 +63,7 @@ export default function FloorPage() {
     }
 
     return (
-        <div className="flex flex-col md:flex-row h-screen w-full p-5 gap-6 overflow-hidden bg-[#E8E8E8]">
+        <div className="flex flex-col md:flex-row h-screen w-full p-5 gap-6 overflow-hidden bg-[#E8E8E8] select-none">
             <WithoutbgHeader />
             {/* Left Sidebar */}
             <div className="lg:w-[25%] xl:w-[20%] md:w-[40%]  mb-2 w-full flex flex-col items-center justify-center border-r p-4 overflow-y-auto">

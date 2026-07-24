@@ -19,7 +19,7 @@ export default function MainTowerPage() {
 
             const id = Number(towerId) === e.id;
             return id && (
-                <div className="relative h-screen w-screen overflow-hidden flex justify-center items-center">
+                <div className="relative h-screen w-screen overflow-hidden flex justify-center items-center select-none">
 
                     {/* Background Image */}
                     <img src={e.image} alt="Arena" className="w-full h-full object-contain lg:object-fill" />
