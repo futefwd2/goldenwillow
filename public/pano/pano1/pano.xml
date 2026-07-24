@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tour apprev="17983" start="node2" appversion="6.1.9">
+  <panorama hideabout="1" id="node2">
+    <input levelbiashidpi="1.000" levelingroll="0" leveltilesize="510" leveltileurl="tiles/node2/cf_%c/l_%l/c_%x/tile_%y.jpg" width="7327" overlap="1" height="7327" levelbias="0.400" levelingpitch="0">
+      <level preload="0" predecode="0" width="7327" height="7327"/>
+      <level preload="0" predecode="0" width="3663" height="3663"/>
+      <level preload="0" predecode="0" width="1831" height="1831"/>
+      <level preload="0" predecode="0" width="915" height="915"/>
+      <level preload="1" predecode="1" width="457" height="457"/>
+      <preview strip="1" color="0x808080"/>
+    </input>
+    <view pannorth="139.736" fovmode="0">
+      <start fov="70" tilt="-7.23" projection="4" pan="-160.09"/>
+      <flyin fov="270" tilt="-90" projection="9" pan="0"/>
+      <min tilt="-90" pan="0" fovpixel="2"/>
+      <max scaletofit="1" fovstereographic="270" fov="120" tilt="90" fovfisheye="360" pan="360"/>
+    </view>
+    <userdata title="" source="" longitude="73.202060" altitude="199.30" heading="139.736" info="" author="" comment="" latitude="18.914923" copyright="" tags="Footage" description="" datetime="20-10-2024 15:37" nodeid="node2" customnodeid=""/>
+    <hotspots wordwrap="1" width="180" height="20">
+      <label enabled="1" background="1" wordwrap="1" backgroundcolor="0xffffff" bordercolor="0x000000" textalpha="1" width="180" backgroundalpha="1" borderradius="1" borderalpha="1" height="20" textcolor="0x000000" border="1"/>
+      <polystyle handcursor="1" backgroundcolor="0x0000ff" bordercolor="0x0000ff" backgroundalpha="0.25098" mode="1" borderalpha="1"/>
+      <hotspot title="" url="" skinid="Point01" target="_blank" id="Point01" tilt="-13.09" description="" pan="-88.85"/>
+      <hotspot title="" url="" skinid="Point02" target="_blank" id="Point02" tilt="-17.58" description="" pan="-147.6"/>
+      <hotspot title="" url="" skinid="Point05" target="_blank" id="Point05" tilt="-8.84" description="" pan="-165.67"/>
+      <hotspot title="" url="" skinid="Point03" target="_blank" id="Point03" tilt="-25.78" description="" pan="-183.51"/>
+      <hotspot title="" url="" skinid="Point04" target="_blank" id="Point04" tilt="-12.42" description="" pan="-157.65"/>
+      <hotspot title="" url="" skinid="Point06" target="_blank" id="Point06" tilt="-6.91" description="" pan="-160.91"/>
+      <hotspot title="" url="" skinid="Point07" target="_blank" id="Point07" tilt="-4.83" description="" pan="-80.48"/>
+      <hotspot title="" url="" skinid="Point08" target="_blank" id="Point08" tilt="-9.14" description="" pan="-121.73"/>
+      <hotspot title="" url="" skinid="Point09" target="_blank" id="Point09" tilt="-2.09" description="" pan="-150.72"/>
+      <hotspot title="" url="" skinid="Point10" target="_blank" id="Point10" tilt="6.15" description="" pan="-307.56"/>
+      <hotspot title="" url="" skinid="Point11" target="_blank" id="Point11" tilt="-17.38" description="" pan="-266.4"/>
+      <hotspot title="" url="" skinid="Point12" target="_blank" id="Point12" tilt="-0.84" description="" pan="-347.37"/>
+      <hotspot title="" url="" skinid="Point13" target="_blank" id="Point13" tilt="-83.26" description="" pan="-173.79"/>
+      <hotspot title="" url="" skinid="Point14" target="_blank" id="Point14" tilt="-8.26" description="" pan="-142.3"/>
+      <hotspot title="" url="" skinid="Point15" target="_blank" id="Point15" tilt="-8.69" description="" pan="-118.09"/>
+      <hotspot title="" url="" skinid="Point16" target="_blank" id="Point16" tilt="-9.63" description="" pan="-128.27"/>
+      <hotspot title="" url="" skinid="Point17" target="_blank" id="Point17" tilt="-7.6" description="" pan="-128.62"/>
+      <hotspot title="" url="" skinid="Point18" target="_blank" id="Point18" tilt="-8.09" description="" pan="-124.44"/>
+    </hotspots>
+    <media>
+      <image rotz="-90.000" fov="30.000" rotx="0.000" handcursor="0" roty="0.000" stretch="1.000" width="1007" id="Element01" tilt="-62.620" height="47" clickmode="0" pan="-156.540">
+        <source url="media/15 M wide road.png"/>
+      </image>
+    </media>
+    <transition zoomin="0" enabled="1" zoomspeed="2" zoomout="0" zoomoutpause="1" type="crossdissolve" blendtime="1" blendcolor="0x000000" zoomfov="20" softedge="0"/>
+    <autorotate useanimation="0" enabled="1" startloaded="1" nodefilter="" returntohorizon="3.000" noderandom="1" speed="0.050" delay="5.00" nodedelay="0.00"/>
+    <flyintransition enabled="1" speed="2.00"/>
+    <animation animsequence="Animation01" syncanimationwithvideo="0" useinautorotation="0"/>
+    <control invertcontrol="1" lockedwheel="0" contextprojections="0" invertwheel="0" hideabout="1" sensitivity="8" lockedkeyboardzoom="0" dblclickfullscreen="0" speedwheel="1" lockedmouse="0" simulatemass="1" rubberband="0" contextfullscreen="0" lockedkeyboard="0"/>
+  </panorama>
+  <masternode>
+    <userdata title="" source="" longitude="" heading="0" info="" author="" comment="" latitude="" copyright="" tags="" description="" datetime="" nodeid="master" customnodeid=""/>
+  </masternode>
+</tour>
