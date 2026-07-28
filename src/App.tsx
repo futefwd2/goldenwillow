@@ -8,7 +8,7 @@ import ProjectStatus_Golden from './GoldenWillows/ProjectStatus_Golden.tsx'
 import GalleryPageGolden from './GoldenWillows/GalleryPageGolden.tsx'
 import GoldenWillowsLayout from './GoldenWillows/GoldenWillowsLayout.tsx'
 import ProjectDetailsPage from './GoldenWillows/ProjectDetailsPage.tsx'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import MainTowerPage from './GoldenWillows/Towers_Golden/MainTowerPage.tsx'
 import FloorPage from './GoldenWillows/Towers_Golden/FloorPage.tsx'
 import UnitPage from './GoldenWillows/Towers_Golden/UnitPage.tsx'
@@ -16,12 +16,14 @@ import JodiUnit from './GoldenWillows/Towers_Golden/JodiUnit.tsx'
 import Jasmine from './components/project_detail/jasmine.tsx'
 import Lavender from './components/project_detail/lavender.tsx'
 
+
 function App() {
+  const location = useLocation();
 
   const showNavbarGoldenWillows = ["/", "/project_highlights", "/location",
     "/project_status", "/projectdetails", "/Jasmine", "/Lavender"];
 
-  const GoldenWillowsNav = showNavbarGoldenWillows.includes(location.pathname);
+  const GoldenWillowsNav = showNavbarGoldenWillows.includes(location.pathname) || location.pathname.startsWith("/tower_goldenwillows/");
   return (
     <>
 

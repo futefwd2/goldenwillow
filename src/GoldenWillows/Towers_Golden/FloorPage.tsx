@@ -4,7 +4,7 @@ import { Tooltip, Button, Modal, Box, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 // import { data } from '../../../data/GoldenWillowsData';
 import { data } from '../../data/GoldenWillowsData';
-import jasmineRefugeFloorPlan from "../../assets/jasmin_tower/Jasmine Tower plan Refuge.jpg";
+
 
 
 // import WithoutbgHeader from '../../../components/WithoutbgHeader';
@@ -56,7 +56,9 @@ export default function FloorPage() {
         };
     });
 
-    const floorImage = isRefugeFloor ? (tower.refugeImage || jasmineRefugeFloorPlan) : singleFloor?.image;
+    const floorImage = isRefugeFloor
+        ? (typeof tower.refugeImage === 'object' ? (tower.refugeImage as any)[floorNumber] : tower.refugeImage)
+        : singleFloor?.image;
 
     const [hoveredUnit, setHoveredUnit] = useState<number | null>(null);
     const [selectedUnit, setSelectedUnit] = useState<number | null>(null);
@@ -224,7 +226,7 @@ export default function FloorPage() {
                                             style={{ cursor: "pointer" }}
                                             onMouseEnter={() => setHoveredUnit(jodiUnit.id)}
                                             onMouseLeave={() => setHoveredUnit(null)}
-                                            onClick={() => navigate(`/golden_jodi/${jodiUnit.id}`)}
+                                            onClick={() => navigate(`/golden_jodi/${jodiUnit.id}`, { state: { towerId: tower.id } })}
                                         />
                                     </Tooltip>
                                 ))}
