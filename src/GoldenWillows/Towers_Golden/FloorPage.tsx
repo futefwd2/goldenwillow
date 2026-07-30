@@ -32,7 +32,7 @@ export default function FloorPage() {
     const towerId = location.state?.towerId || 1;
     const tower = data.find((t) => t.id === towerId) || data[0];
 
-    const rawFloor = tower?.floors?.[0];
+    const rawFloor = (isRefugeFloor && tower?.floors?.[1]) ? tower?.floors?.[1] : tower?.floors?.[0];
     const singleFloor = rawFloor ? {
         ...rawFloor,
         id: floorNumber,
@@ -67,8 +67,8 @@ export default function FloorPage() {
         return sessionStorage.getItem("isJodiMode") === "true";
     });
 
-    // Disable Jodi mode on refuge floors
-    const activeJodiMode = isRefugeFloor ? false : isJodiMode;
+    // Disable Jodi mode on refuge floors or if the tower doesn't have jodi options
+    const activeJodiMode = (isRefugeFloor || !tower?.jodi || tower.jodi.length === 0) ? false : isJodiMode;
 
     console.log("singleFloor", singleFloor)
     if (!singleFloor) {
@@ -116,12 +116,11 @@ export default function FloorPage() {
                             <ul key={unit.id}>
                                 <li
                                     className={`
-                                        cursor-pointer transition-transform duration-200 mt-2 flex p-1 rounded-sm justify-between border-b pb-2 text-[12px]
+                                        transition-transform duration-200 mt-2 flex p-1 rounded-sm justify-between border-b pb-2 text-[12px]
                                         ${hoveredUnit === unit.id ? "scale-105 bg-slate-200" : "scale-100"}
                                     `}
                                     onMouseEnter={() => setHoveredUnit(unit.id)}
                                     onMouseLeave={() => setHoveredUnit(null)}
-                                    onClick={() => setSelectedUnit(unit.id)}
                                 >
                                     <p>{unit.name}</p> <p>{unit.type}</p>
                                 </li>
@@ -132,12 +131,11 @@ export default function FloorPage() {
                             <ul key={unit.id}>
                                 <li
                                     className={`
-                                        cursor-pointer transition-transform duration-200 mt-2 flex p-1 rounded-sm justify-between border-b pb-2 text-[12px]
+                                        transition-transform duration-200 mt-2 flex p-1 rounded-sm justify-between border-b pb-2 text-[12px]
                                         ${hoveredUnit === unit.id ? "scale-105 bg-slate-200" : "scale-100"}
                                     `}
                                     onMouseEnter={() => setHoveredUnit(unit.id)}
                                     onMouseLeave={() => setHoveredUnit(null)}
-                                    onClick={() => setSelectedUnit(unit.id)}
                                 >
                                     <p>{unit.name}</p> <p>{unit.type}</p>
                                 </li>
@@ -313,7 +311,7 @@ export default function FloorPage() {
                         Zoom Image
                     </Button>
 
-                    {!isRefugeFloor && (
+                    {!isRefugeFloor && tower?.jodi && tower.jodi.length > 0 && (
                         <Button
                             fullWidth
                             onClick={() => {
