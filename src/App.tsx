@@ -16,13 +16,14 @@ import JodiUnit from './GoldenWillows/Towers_Golden/JodiUnit.tsx'
 import Jasmine from './components/project_detail/jasmine.tsx'
 import Lavender from './components/project_detail/lavender.tsx'
 import Aster from './components/project_detail/aster.tsx'
+import Zenia from './components/project_detail/zenia.tsx'
 
 
 function App() {
   const location = useLocation();
 
   const showNavbarGoldenWillows = ["/", "/project_highlights", "/location",
-    "/project_status", "/projectdetails", "/Jasmine", "/Lavender", "/Aster"];
+    "/project_status", "/projectdetails", "/Jasmine", "/Lavender", "/Aster", "/Zenia"];
 
   const GoldenWillowsNav = showNavbarGoldenWillows.includes(location.pathname) || location.pathname.startsWith("/tower_goldenwillows/");
   return (
@@ -40,6 +41,7 @@ function App() {
         <Route path="/Jasmine" element={<Jasmine />} />
         <Route path="/Lavender" element={<Lavender />} />
         <Route path="/Aster" element={<Aster />} />
+        <Route path="/Zenia" element={<Zenia />} />
 
         <Route path="/tower_goldenwillows/:towerId" element={<MainTowerPage />} />
         <Route path="/golden_floor/:id" element={<FloorPage />} />

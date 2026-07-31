@@ -127,6 +127,55 @@ import asterStaticUnit2 from "../assets/Aster/2d static/unit2.jpg";
 import asterStaticUnit3 from "../assets/Aster/2d static/unit3.jpg";
 import asterStaticUnit4 from "../assets/Aster/2d static/unit4.jpg";
 
+// Zenia Tower Images and Floor Plans
+import zeniaImg from "../assets/Zenia/towerzenia.jpg";
+import zeniaFloorPlan from "../assets/Zenia/Zenia floor typical.jpg";
+import zeniaRefugeFloorPlan from "../assets/Zenia/Zenia floor refuge.jpg";
+
+// Zenia Tower Typical Unit 3D Images
+import zenia3dUnit1 from "../assets/Zenia/Typical/3D/unit1.jpg";
+import zenia3dUnit2 from "../assets/Zenia/Typical/3D/unit2.jpg";
+import zenia3dUnit3 from "../assets/Zenia/Typical/3D/unit3.jpg";
+import zenia3dUnit4 from "../assets/Zenia/Typical/3D/unit4.jpg";
+
+// Zenia Tower Typical Unit 2D Images
+import zenia2dUnit1 from "../assets/Zenia/Typical/2D/unit1.jpg";
+import zenia2dUnit2 from "../assets/Zenia/Typical/2D/unit2.jpg";
+import zenia2dUnit3 from "../assets/Zenia/Typical/2D/unit3.jpg";
+import zenia2dUnit4 from "../assets/Zenia/Typical/2D/unit4.jpg";
+
+// Zenia Tower Typical Unit 2D Static Images
+import zeniaStaticUnit1 from "../assets/Zenia/Typical/2Dstatic/unit1.jpg";
+import zeniaStaticUnit2 from "../assets/Zenia/Typical/2Dstatic/unit2.jpg";
+import zeniaStaticUnit3 from "../assets/Zenia/Typical/2Dstatic/unit3.jpg";
+import zeniaStaticUnit4 from "../assets/Zenia/Typical/2Dstatic/unit4.jpg";
+
+// Zenia Tower Refuge Unit 3D Images
+import zeniaRefuge3dUnit1 from "../assets/Zenia/Refuge/3D/unit1.jpg";
+import zeniaRefuge3dUnit2 from "../assets/Zenia/Refuge/3D/unit2.jpg";
+import zeniaRefuge3dUnit3 from "../assets/Zenia/Refuge/3D/unit3.jpg";
+import zeniaRefuge3dUnit4 from "../assets/Zenia/Refuge/3D/unit4.jpg";
+
+// Zenia Tower Refuge Unit 2D Images
+import zeniaRefuge2dUnit1 from "../assets/Zenia/Refuge/2D/unit1.jpg";
+import zeniaRefuge2dUnit2 from "../assets/Zenia/Refuge/2D/unit2.jpg";
+import zeniaRefuge2dUnit3 from "../assets/Zenia/Refuge/2D/unit3.jpg";
+import zeniaRefuge2dUnit4 from "../assets/Zenia/Refuge/2D/unit4.jpg";
+
+// Zenia Tower Refuge Unit 2D Static Images
+import zeniaRefugeStaticUnit1 from "../assets/Zenia/Refuge/2D static/unit1.jpg";
+import zeniaRefugeStaticUnit2 from "../assets/Zenia/Refuge/2D static/unit2.jpg";
+import zeniaRefugeStaticUnit3 from "../assets/Zenia/Refuge/2D static/unit3.jpg";
+import zeniaRefugeStaticUnit4 from "../assets/Zenia/Refuge/2D static/unit4.jpg";
+
+// Zenia Tower Jodi Floor Plans
+import zeniaJodiFloorPlan from "../assets/Zenia/Jodi/Zenia Jodi floor typical.jpg";
+import zeniaJodiRefugeFloorPlan from "../assets/Zenia/Jodi/Zenia Jodi floor Refuge.jpg";
+
+// Zenia Tower Jodi Typical 3D Layouts
+import zeniaJodiTypical3dUnit1_2 from "../assets/Zenia/Jodi/Typical/3D/Unit1 &unit 2.jpg";
+import zeniaJodiTypical3dUnit3_4 from "../assets/Zenia/Jodi/Typical/3D/Unit3 &unit 4.jpg";
+
 
 export const data = [
     {
@@ -9222,8 +9271,8 @@ export const data = [
         id: 8,
         polygon: "2273,1983,2365,2005,2423,2031,2511,2049,2560,2067,2533,2102,2524,2120,2493,2115,2454,2111,2520,2164,2533,2182,2515,2226,2228,2133,2224,2093,2250,2071,2286,2076,2303,2049,2268,2031",
         name: "ZENIA",
-        image: image,
-        link: "",
+        image: zeniaImg,
+        link: "/Zenia",
         hoverColor: "rgba(255,112,67,0.4)",
         description: [
             {
@@ -9233,51 +9282,241 @@ export const data = [
         ],
         floorsData: [
             {
-                id: 1,
-                top: "89.3%",
-                left: "40%",
-                hoverColor: "rgba(255,165,0,0.5)",
-                name: "Floor 2",
-                height: 15,
-                width: 140,
-            },
-            {
-                id: 2,
-                top: "87.4%",
-                left: "40%",
-                hoverColor: "rgba(255,165,0,0.5)",
-                name: "Floor 3",
-                height: 15,
-                width: 140,
-            },
-            {
                 id: 3,
-                top: "85.8%",
-                left: "40%",
-                hoverColor: "rgba(255,165,0,0.5)",
+                name: "Floor 3",
+                polygon: "1255,1455,1255,1484,1663,1489,1661,1460",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 4,
                 name: "Floor 4",
-                height: 15,
-                width: 140,
+                polygon: "1255,1424,1255,1453,1663,1458,1661,1429",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 5,
+                name: "Floor 5",
+                polygon: "1258,1393,1258,1422,1666,1427,1664,1398",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 6,
+                name: "Floor 6",
+                polygon: "1255,1356,1255,1385,1663,1390,1661,1361",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 7,
+                name: "Floor 7",
+                polygon: "1255,1327,1255,1356,1663,1361,1661,1332",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 8,
+                name: "Floor 8",
+                polygon: "1255,1290,1255,1319,1663,1324,1661,1295",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 9,
+                name: "Floor 9",
+                polygon: "1263,1258,1263,1287,1671,1292,1669,1263",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 10,
+                name: "Floor 10",
+                polygon: "1258,1221,1258,1250,1666,1255,1664,1226",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 11,
+                name: "Floor 11",
+                polygon: "1255,1191,1255,1220,1663,1225,1661,1196",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 12,
+                name: "Floor 12",
+                polygon: "1258,1156,1258,1185,1666,1190,1664,1161",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 13,
+                name: "Floor 13",
+                polygon: "1267,1127,1267,1156,1675,1161,1673,1132",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 14,
+                name: "Floor 14",
+                polygon: "1262,1091,1262,1120,1670,1125,1668,1096",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 15,
+                name: "Floor 15",
+                polygon: "1262,1068,1262,1097,1670,1102,1668,1073",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 16,
+                name: "Floor 16",
+                polygon: "1262,1032,1262,1061,1670,1066,1668,1037",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 17,
+                name: "Floor 17",
+                polygon: "1262,999,1262,1028,1670,1033,1668,1004",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 18,
+                name: "Floor 18",
+                polygon: "1257,965,1257,994,1665,999,1663,970",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 19,
+                name: "Floor 19",
+                polygon: "1254,939,1254,968,1662,973,1660,944",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 20,
+                name: "Floor 20",
+                polygon: "1257,900,1257,929,1665,934,1663,905",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 21,
+                name: "Floor 21",
+                polygon: "1257,868,1257,897,1665,902,1663,873",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 22,
+                name: "Floor 22",
+                polygon: "1257,838,1257,867,1665,872,1663,843",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 23,
+                name: "Floor 23",
+                polygon: "1260,801,1260,830,1668,835,1666,806",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 24,
+                name: "Floor 24",
+                polygon: "1263,766,1263,795,1671,800,1669,771",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 25,
+                name: "Floor 25",
+                polygon: "1260,737,1260,766,1668,771,1666,742",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 26,
+                name: "Floor 26",
+                polygon: "1260,700,1260,729,1668,734,1666,705",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 27,
+                name: "Floor 27",
+                polygon: "1265,669,1265,698,1673,703,1671,674",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 28,
+                name: "Floor 28",
+                polygon: "1265,637,1265,666,1673,671,1671,642",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 29,
+                name: "Floor 29",
+                polygon: "1262,608,1262,637,1670,642,1668,613",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 30,
+                name: "Floor 30",
+                polygon: "1259,576,1259,605,1667,610,1665,581",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 31,
+                name: "Floor 31",
+                polygon: "1259,545,1259,574,1667,579,1665,550",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 32,
+                name: "Floor 32",
+                polygon: "1261,524,1255,556,1664,553,1661,526",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 33,
+                name: "Floor 33",
+                polygon: "1264,489,1258,521,1667,518,1664,491",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 34,
+                name: "Floor 34",
+                polygon: "1258,468,1255,497,1653,487,1661,455",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 35,
+                name: "Floor 35",
+                polygon: "1263,433,1260,462,1658,452,1666,420",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 36,
+                name: "Floor 36",
+                polygon: "1263,389,1260,418,1658,408,1666,376",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 37,
+                name: "Floor 37",
+                polygon: "1266,358,1263,387,1661,377,1669,345",
+                hoverColor: "rgba(255,165,0,0.4)",
+            },
+            {
+                id: 38,
+                name: "Floor 38",
+                polygon: "1261,323,1258,352,1656,342,1664,310",
+                hoverColor: "rgba(255,165,0,0.4)",
             },
         ],
         floors: [
             {
                 id: 1,
                 title: "FLOOR-2",
-                image: floorImg,
+                image: zeniaFloorPlan,
                 imageSettings: {
                     svgSize: "0 0 3000 1688",
                     imageWidth: "3000",
                     imageHeight: "1688",
                 },
                 buttonSettings: {
-                    threeBHK: {
-                        bgColor: "#00ffe5",
-                        text: "3BHK PRESIDENTIA",
-                    },
+
                     fourBHK: {
-                        bgColor: "#eca9f7",
-                        text: "3BHK PREMIA",
+                        bgColor: "#C87D32",
+                        text: "3BHK GRANDE",
+                    },
+                    threeBHK: {
+                        bgColor: "#E62EE6",
+                        text: "3BHK PRESIDENTIA",
                     },
                 },
                 units: [
@@ -9286,11 +9525,11 @@ export const data = [
                         name: "Unit No-1",
                         type: "3 BHK",
                         size: "1400 sq.ft",
-                        hoverColor: "rgba(0,255,229,0.3)",
-                        polygonPoints: "245,265,221,310,176,318,97,527,147,530,105,657,261,655,248,705,261,739,333,737,327,715,534,713,582,527,1014,530,998,628,1130,628,1141,551,1504,559,1499,384,1472,384,1467,419,1424,421,1427,390,1393,382,1393,326,1350,323,1342,355,1212,358,1202,323,1162,323,1083,323,1096,278,831,278,820,323,727,321,730,294,648,294,656,262,420,268,407,310,370,315,394,265",
-                        unitimage: floorunit1,
-                        image2D: floorunit1,
-                        image2Dstatic: floorunit1,
+                        hoverColor: "rgba(200,125,50,0.35)",
+                        polygonPoints: "513,609,524,554,502,535,537,350,571,355,590,299,707,299,696,355,712,360,722,337,961,337,964,302,1162,305,1152,363,1210,366,1215,395,1390,395,1393,416,1486,413,1491,564,1295,567,1202,564,1189,678,818,689,823,609,781,609,786,549,677,535,664,607",
+                        unitimage: zenia3dUnit1,
+                        image2D: zenia2dUnit1,
+                        image2Dstatic: zeniaStaticUnit1,
                         rooms: [
                             {
                                 id: 1,
@@ -9481,11 +9720,11 @@ export const data = [
                         name: "Unit No-2",
                         type: "3 BHK",
                         size: "1400 sq.ft",
-                        hoverColor: "rgba(0,255,229,0.3)",
-                        polygonPoints: "1501,384,1509,554,1856,554,1867,628,2005,631,1992,535,2376,533,2416,708,2718,710,2697,655,2853,655,2803,530,2911,530,2826,318,2784,323,2765,270,2609,270,2633,313,2598,310,2580,260,2352,262,2357,297,2270,297,2275,326,2190,326,2172,278,1912,281,1923,323,1833,318,1798,323,1793,358,1666,355,1610,352,1610,384",
-                        unitimage: floorunit1,
-                        image2D: floorunit1,
-                        image2Dstatic: floorunit1,
+                        hoverColor: " rgba(200,125,50,0.35)",
+                        polygonPoints: "1490,564,1485,413,1572,411,1572,371,1610,366,1618,397,1721,392,1721,371,1822,363,1816,302,2010,302,2012,360,2065,360,2071,339,2214,334,2246,337,2254,360,2280,363,2272,299,2389,291,2399,358,2431,360,2468,535,2439,538,2456,607,2312,609,2301,546,2180,546,2185,604,2146,609,2154,689,1889,684,1785,684,1777,567",
+                        unitimage: zenia3dUnit2,
+                        image2D: zenia2dUnit2,
+                        image2Dstatic: zeniaStaticUnit2,
                         rooms: [
                             {
                                 id: 1,
@@ -9676,11 +9915,11 @@ export const data = [
                         name: "Unit No-3",
                         type: "3 BHK",
                         size: "1400 sq.ft",
-                        hoverColor: "rgba(236,169,247,0.3)",
-                        polygonPoints: "1848,859,2302,856,2323,980,2368,980,2368,1018,2577,1026,2606,1118,2683,1121,2758,1415,2694,1420,2712,1471,2715,1510,2728,1540,2538,1545,2524,1497,2527,1468,2514,1420,2432,1423,2196,1420,2161,1420,2167,1473,2167,1513,2180,1569,1976,1569,1970,1510,1973,1479,1968,1418,1894,1418,1883,1285,1848,1285,1841,1336,1684,1336,1689,1291,1618,1291,1623,1177,1504,1182,1499,1018,1870,1012",
-                        unitimage: floorunit1,
-                        image2D: floorunit1,
-                        image2Dstatic: floorunit1,
+                        hoverColor: "rgba(230,46,230,0.35)",
+                        polygonPoints: "1494,1092,1494,951,1798,954,1796,882,1907,885,1926,980,2267,986,2236,753,2334,750,2344,814,2519,816,2535,906,2689,904,2790,1269,2752,1269,2758,1320,2612,1328,2601,1267,2161,1261,2169,1317,1910,1320,1899,1227,1814,1222,1817,1182,1608,1185,1600,1086",
+                        unitimage: zenia3dUnit3,
+                        image2D: zenia2dUnit3,
+                        image2Dstatic: zeniaStaticUnit3,
                         rooms: [
                             {
                                 id: 1,
@@ -9871,11 +10110,11 @@ export const data = [
                         name: "Unit No-4",
                         type: "3 BHK",
                         size: "1400 sq.ft",
-                        hoverColor: "rgba(236,169,247,0.3)",
-                        polygonPoints: "325,1110,399,1113,423,1026,693,1028,762,1023,762,980,680,980,704,856,1038,861,1040,904,1146,904,1136,1012,1501,1015,1499,1177,1377,1179,1377,1288,1122,1288,1104,1420,1043,1420,1040,1473,1030,1566,826,1563,839,1500,836,1473,844,1418,807,1418,574,1423,492,1420,476,1479,470,1540,282,1542,293,1505,282,1481,303,1420,232,1418",
-                        unitimage: floorunit1,
-                        image2D: floorunit1,
-                        image2Dstatic: floorunit1,
+                        hoverColor: "rgba(230,46,230,0.35)",
+                        polygonPoints: "1488,951,1488,1094,1385,1086,1385,1177,1173,1182,1173,1222,1088,1222,1078,1328,813,1314,828,1222,749,1224,749,1185,659,1177,646,1261,415,1261,412,1238,394,1235,373,1330,224,1325,245,1230,206,1227,264,986,240,986,259,904,418,898,428,840,542,845,548,811,701,814,677,986,1067,986,1078,880,1181,882,1189,954",
+                        unitimage: zenia3dUnit4,
+                        image2D: zenia2dUnit4,
+                        image2Dstatic: zeniaStaticUnit4,
                         rooms: [
                             {
                                 id: 1,
@@ -10066,7 +10305,7 @@ export const data = [
             {
                 id: 2,
                 title: "FLOOR-6",
-                image: floorImg,
+                image: zeniaRefugeFloorPlan,
                 imageSettings: {
                     svgSize: "0 0 3000 1688",
                     imageWidth: "3000",
@@ -10074,25 +10313,25 @@ export const data = [
                 },
                 buttonSettings: {
                     threeBHK: {
-                        bgColor: "#00ffe5",
-                        text: "3BHK PRESIDENTIA",
+                        bgColor: "#fde617ff",
+                        text: "2BHK",
                     },
                     fourBHK: {
-                        bgColor: "#eca9f7",
-                        text: "3BHK PREMIA",
+                        bgColor: "#E62EE6",
+                        text: "3BHK PRESIDENTIA",
                     },
                 },
                 units: [
                     {
                         id: 101,
                         name: "Unit No-1",
-                        type: "3 BHK",
-                        size: "1400 sq.ft",
-                        hoverColor: "rgba(0,255,229,0.3)",
-                        polygonPoints: "245,265,221,310,176,318,97,527,147,530,105,657,261,655,248,705,261,739,333,737,327,715,534,713,582,527,1014,530,998,628,1130,628,1141,551,1504,559,1499,384,1472,384,1467,419,1424,421,1427,390,1393,382,1393,326,1350,323,1342,355,1212,358,1202,323,1162,323,1083,323,1096,278,831,278,820,323,727,321,730,294,648,294,656,262,420,268,407,310,370,315,394,265",
-                        unitimage: floorunit1,
-                        image2D: floorunit1,
-                        image2Dstatic: floorunit1,
+                        type: "2 BHK",
+                        size: "1100 sq.ft",
+                        hoverColor: "rgba(253,230,23,0.35)",
+                        polygonPoints: "1189,630,1215,363,1149,365,1157,302,969,299,958,365,900,357,903,341,725,339,725,363,699,360,707,299,590,299,574,360,542,363,505,537,532,537,516,606,659,612,669,543,786,543,786,598,826,609,815,686,1189,680",
+                        unitimage: zeniaRefuge3dUnit1,
+                        image2D: zeniaRefuge2dUnit1,
+                        image2Dstatic: zeniaRefugeStaticUnit1,
                         rooms: [
                             {
                                 id: 2,
@@ -10281,13 +10520,13 @@ export const data = [
                     {
                         id: 102,
                         name: "Unit No-2",
-                        type: "3 BHK",
-                        size: "1400 sq.ft",
-                        hoverColor: "rgba(0,255,229,0.3)",
-                        polygonPoints: "1501,384,1509,554,1856,554,1867,628,2005,631,1992,535,2376,533,2416,708,2718,710,2697,655,2853,655,2803,530,2911,530,2826,318,2784,323,2765,270,2609,270,2633,313,2598,310,2580,260,2352,262,2357,297,2270,297,2275,326,2190,326,2172,278,1912,281,1923,323,1833,318,1798,323,1793,358,1666,355,1610,352,1610,384",
-                        unitimage: floorunit1,
-                        image2D: floorunit1,
-                        image2Dstatic: floorunit1,
+                        type: "2 BHK",
+                        size: "1100 sq.ft",
+                        hoverColor: "rgba(253,230,23,0.35)",
+                        polygonPoints: "1780,633,1761,363,1817,363,1817,299,2005,299,2013,368,2066,363,2066,336,2238,336,2244,357,2278,357,2267,299,2387,299,2395,363,2432,365,2469,532,2440,543,2450,604,2310,617,2299,548,2183,543,2188,604,2143,612,2156,686,1891,683,1785,686",
+                        unitimage: zeniaRefuge3dUnit2,
+                        image2D: zeniaRefuge2dUnit2,
+                        image2Dstatic: zeniaRefugeStaticUnit2,
                         rooms: [
                             {
                                 id: 2,
@@ -10478,11 +10717,11 @@ export const data = [
                         name: "Unit No-3",
                         type: "3 BHK",
                         size: "1400 sq.ft",
-                        hoverColor: "rgba(236,169,247,0.3)",
-                        polygonPoints: "1848,859,2302,856,2323,980,2368,980,2368,1018,2577,1026,2606,1118,2683,1121,2758,1415,2694,1420,2712,1471,2715,1510,2728,1540,2538,1545,2524,1497,2527,1468,2514,1420,2432,1423,2196,1420,2161,1420,2167,1473,2167,1513,2180,1569,1976,1569,1970,1510,1973,1479,1968,1418,1894,1418,1883,1285,1848,1285,1841,1336,1684,1336,1689,1291,1618,1291,1623,1177,1504,1182,1499,1018,1870,1012",
-                        unitimage: floorunit1,
-                        image2D: floorunit1,
-                        image2Dstatic: floorunit1,
+                        hoverColor: "rgba(230,46,230,0.35)",
+                        polygonPoints: "1491,1091,1496,953,1798,948,1796,882,1910,882,1918,983,2273,988,2246,816,2519,810,2535,903,2689,903,2776,1229,2739,1234,2760,1324,2615,1327,2596,1237,2556,1237,2559,1258,2342,1258,2328,1184,2236,1181,2241,1216,2156,1226,2169,1319,1902,1316,1899,1226,1822,1221,1820,1179,1602,1176,1597,1089",
+                        unitimage: zeniaRefuge3dUnit3,
+                        image2D: zeniaRefuge2dUnit3,
+                        image2Dstatic: zeniaRefugeStaticUnit3,
                         rooms: [
                             {
                                 id: 2,
@@ -10673,11 +10912,11 @@ export const data = [
                         name: "Unit No-4",
                         type: "3 BHK",
                         size: "1400 sq.ft",
-                        hoverColor: "rgba(236,169,247,0.3)",
-                        polygonPoints: "325,1110,399,1113,423,1026,693,1028,762,1023,762,980,680,980,704,856,1038,861,1040,904,1146,904,1136,1012,1501,1015,1499,1177,1377,1179,1377,1288,1122,1288,1104,1420,1043,1420,1040,1473,1030,1566,826,1563,839,1500,836,1473,844,1418,807,1418,574,1423,492,1420,476,1479,470,1540,282,1542,293,1505,282,1481,303,1420,232,1418",
-                        unitimage: floorunit1,
-                        image2D: floorunit1,
-                        image2Dstatic: floorunit1,
+                        hoverColor: "rgba(230,46,230,0.35)",
+                        polygonPoints: "1488,1091,1496,959,1181,956,1189,887,1080,882,1070,985,683,983,709,816,558,818,548,837,431,839,420,903,267,906,240,983,264,991,206,1226,248,1234,227,1327,367,1327,391,1229,428,1226,426,1263,640,1256,661,1184,746,1181,749,1218,831,1224,818,1316,1080,1319,1088,1216,1160,1216,1165,1179,1380,1179,1390,1089",
+                        unitimage: zeniaRefuge3dUnit4,
+                        image2D: zeniaRefuge2dUnit4,
+                        image2Dstatic: zeniaRefugeStaticUnit4,
                         rooms: [
                             {
                                 id: 2,
@@ -10866,6 +11105,173 @@ export const data = [
                 ],
             },
         ],
+        jodi: [
+            {
+                id: 901,
+                name: "Unit No.1 & Unit No.2",
+                type: "4 BHK Jodi",
+                size: "2800 sq.ft",
+                hoverColor: "rgba(234, 220, 94, 0.47)",
+                polygons: [
+                    "245,265,221,310,176,318,97,527,147,530,105,657,261,655,248,705,261,739,333,737,327,715,534,713,582,527,1014,530,998,628,1130,628,1141,551,1504,559,1499,384,1472,384,1467,419,1424,421,1427,390,1393,382,1393,326,1350,323,1342,355,1212,358,1202,323,1162,323,1083,323,1096,278,831,278,820,323,727,321,730,294,648,294,656,262,420,268,407,310,370,315,394,265",
+                    "1501,384,1509,554,1856,554,1867,628,2005,631,1992,535,2376,533,2416,708,2718,710,2697,655,2853,655,2803,530,2911,530,2826,318,2784,323,2765,270,2609,270,2633,313,2598,310,2580,260,2352,262,2357,297,2270,297,2275,326,2190,326,2172,278,1912,281,1923,323,1833,318,1798,323,1793,358,1666,355,1610,352,1610,384"
+                ],
+                unitimage: zeniaJodiTypical3dUnit1_2,
+                image2D: zeniaJodiTypical3dUnit1_2,
+                image2Dstatic: zeniaJodiTypical3dUnit1_2,
+                rooms: [
+                    { id: 1, name: "Master Bedroom", size: "11'0'' x 15'0''", polygon: "285,461,142,885,621,880,714,461" },
+                    { id: 2, name: "Walk In", size: "5'0'' x 6'0''", polygon: "497,877,640,880,603,1031,463,1028" },
+                    { id: 3, name: "Bedroom-1", size: "11'0'' x 13'0''", polygon: "720,421,1138,418,1096,771,648,768" },
+                    { id: 4, name: "Balcony", size: "7'0'' x 5'0''", polygon: "407,372,378,464,640,464,653,403,680,406,690,374" },
+                    { id: 5, name: "Passage", size: "11'8'' x 3'3''", polygon: "841,771,823,880,1300,885,1305,771" },
+                    { id: 6, name: "Walk-through Area", size: "5'0'' x 3'3''", polygon: "640,771,614,877,826,880,839,779" },
+                    { id: 7, name: "M.Toilet", size: "5'0'' x 8'0''", polygon: "256,882,492,882,420,1161,168,1163" },
+                    { id: 8, name: "Toilet", size: "4'6'' x 8'0''", polygon: "1117,535,1303,535,1295,768,1091,768" },
+                    { id: 9, name: "Living/Dining", size: "21'0'' x 14'3''", polygon: "1313,474,1303,885,2169,882,2103,480" },
+                    { id: 10, name: "Bedroom-2", size: "11'0'' x 14'0''", polygon: "2106,538,2535,535,2646,940,2172,943" },
+                    { id: 11, name: "Toilet", size: "5'0'' x 8'0''", polygon: "2570,692,2784,689,2882,959,2649,957" },
+                    { id: 12, name: "Ent.Foyer", size: "5'6'' x 6'11''", polygon: "1912,877,2164,880,2201,1105,1944,1102" },
+                    { id: 13, name: "Kitchen", size: "8'5'' x 11'2''", polygon: "709,882,1080,882,1040,1280,629,1277" },
+                    { id: 14, name: "Utility", size: "3'6'' x 5'6''/1'5 X 2'2", polygon: "457,1074,677,1073,629,1299,452,1296,483,1169,433,1161" },
+                    { id: 15, name: "Balcony", size: "13'0'' x 5'0''", polygon: "1456,387,1941,387,1952,477,1456,477" },
+                    { id: 16, name: "Master Bedroom 2", size: "11'0'' x 15'0''", polygon: "2280,440,2704,437,2850,856,2383,859" },
+                    { id: 17, name: "Walk In 2", size: "5'0'' x 6'0''", polygon: "2270,861,2421,858,2453,996,2294,996" },
+                    { id: 18, name: "Bedroom-3", size: "11'0'' x 13'0''", polygon: "1857,395,2273,397,2358,750,1902,750" },
+                    { id: 19, name: "Balcony 2", size: "7'0'' x 5'0''", polygon: "2312,353,2595,350,2630,440,2359,448,2347,387,2323,390" },
+                    { id: 20, name: "Passage 2", size: "11'5'' x 3'3''", polygon: "1703,750,1708,856,2177,856,2159,753" },
+                    { id: 21, name: "Walk-through Area 2", size: "5'3'' x 3'3''", polygon: "2161,753,2177,861,2384,856,2357,742" },
+                    { id: 22, name: "M.Toilet 2", size: "5'0'' x 8'0''", polygon: "2407,859,2638,862,2723,1131,2476,1134" },
+                    { id: 23, name: "Toilet 2", size: "4'6'' x 8'0''", polygon: "1700,514,1878,511,1909,753,1705,745" },
+                    { id: 24, name: "Living/Dining 2", size: "21'0'' x 14'3''", polygon: "905,456,1695,456,1705,856,836,856" },
+                    { id: 25, name: "Bedroom-4", size: "11'0'' x 14'0''", polygon: "470,511,900,511,826,925,359,920" },
+                    { id: 26, name: "Toilet 3", size: "5'0'' x 8'0''", polygon: "229,665,436,662,367,914,134,914" },
+                    { id: 27, name: "Ent.Foyer 2", size: "5'6'' x 6'11''", polygon: "841,854,1083,859,1059,1082,802,1082" },
+                    { id: 28, name: "Kitchen 2", size: "8'5'' x 11'2''", polygon: "1835,859,2209,859,2280,1253,1872,1245" },
+                    { id: 29, name: "Utility 2", size: "3'6'' x 5'6''/1'5 X 2'2", polygon: "2241,1041,2469,1044,2492,1137,2432,1137,2463,1259,2278,1259" },
+                    { id: 30, name: "Balcony 3", size: "1064,360,1544,363,1541,461,1043,458" }
+                ],
+                roomstatic: [
+                    { id: 1, name: "Master Bedroom", size: "11'0'' x 15'0''", polygon: "338,496,754,496,757,1033,338,1039" },
+                    { id: 2, name: "Walk In", size: "5'0'' x 6'0''", polygon: "645,1033,770,1033,767,1190,645,1192" },
+                    { id: 3, name: "Bedroom-1", size: "11'0'' x 13'0''", polygon: "757,427,1162,432,1146,906,754,909" },
+                    { id: 4, name: "Balcony", size: "404,289,704,291,704,400,682,403,672,514,420,511,425,403,402,403" },
+                    { id: 5, name: "Passage", size: "11'8'' x 3'3''", polygon: "950,909,955,1031,1342,1031,1342,912" },
+                    { id: 6, name: "Walk-through Area", size: "5'0'' x 3'3''", polygon: "757,906,754,1028,953,1033,953,904" },
+                    { id: 7, name: "M.Toilet", size: "5'0'' x 8'0''", polygon: "444,1033,645,1039,640,1344,444,1344" },
+                    { id: 8, name: "Toilet", size: "4'6'' x 8'0''", polygon: "1154,599,1324,596,1332,909,1152,909" },
+                    { id: 9, name: "Living/Dining", size: "21'0'' x 14'3''", polygon: "1329,517,2087,519,2087,1039,1337,1041" },
+                    { id: 10, name: "Bedroom-2", size: "11'0'' x 14'0''", polygon: "2082,594,2479,599,2479,1113,2084,1108" },
+                    { id: 11, name: "Toilet", size: "5'0'' x 8'0''", polygon: "2477,803,2673,808,2675,1113,2477,1113" },
+                    { id: 12, name: "Ent.Foyer", size: "5'6'' x 6'11''", polygon: "1870,1036,2084,1033,2084,1283,1870,1280" },
+                    { id: 13, name: "Kitchen", size: "8'5'' x 11'2''", polygon: "826,1031,1144,1031,1146,1455,823,1455" },
+                    { id: 14, name: "Utility", size: "3'6'' x 5'6''/1'5 X 2'2", polygon: "659,1251,823,1245,826,1465,696,1465,698,1344,656,1344" },
+                    { id: 15, name: "Balcony", size: "1451,310,1960,313,1962,432,1941,429,1947,533,1472,530,1480,432,1451,432" },
+                    { id: 16, name: "Master Bedroom 2", size: "11'0'' x 15'0''", polygon: "2249,498,2665,498,2670,1033,2249,1028" },
+                    { id: 17, name: "Walk In 2", size: "5'0'' x 6'0''", polygon: "2241,1028,2368,1031,2363,1190,2243,1190" },
+                    { id: 18, name: "Bedroom-3", size: "11'0'' x 13'0''", polygon: "1856,429,2254,435,2254,912,1851,909" },
+                    { id: 19, name: "Balcony 2", size: "2312,291,2612,291,2612,405,2588,405,2588,511,2333,501,2333,408,2310,409" },
+                    { id: 20, name: "Passage 2", size: "11'5'' x 3'3''", polygon: "1676,909,1676,1039,2084,1036,2087,904" },
+                    { id: 21, name: "Walk-through Area 2", size: "2082,914,2082,1036,2251,1033,2249,914" },
+                    { id: 22, name: "M.Toilet 2", size: "2360,1033,2569,1033,2564,1341,2363,1344" },
+                    { id: 23, name: "Toilet 2", size: "1679,602,1856,602,1856,912,1679,909" },
+                    { id: 24, name: "Living/Dining 2", size: "921,525,1676,519,1674,1033,926,1036" },
+                    { id: 25, name: "Bedroom-4", size: "526,605,929,602,939,1105,534,1108" },
+                    { id: 26, name: "Toilet 3", size: "341,806,531,806,534,1110,338,1113" },
+                    { id: 27, name: "Ent.Foyer 2", size: "934,1030,1138,1030,1138,1271,932,1269" },
+                    { id: 28, name: "Kitchen 2", size: "1859,1041,2180,1039,2180,1452,1864,1452" },
+                    { id: 29, name: "Utility 2", size: "2174,1242,2357,1245,2355,1341,2315,1341,2318,1468,2180,1468" },
+                    { id: 30, name: "Balcony 3", size: "1048,310,1557,310,1552,437,1530,435,1533,533,1064,533,1069,437,1045,435" }
+                ]
+            },
+            {
+                id: 902,
+                name: "Unit No.3 & Unit No.4",
+                type: "4 BHK Jodi",
+                size: "2800 sq.ft",
+                hoverColor: "rgba(234, 220, 94, 0.47)",
+                polygons: [
+                    "1848,859,2302,856,2323,980,2368,980,2368,1018,2577,1026,2606,1118,2683,1121,2758,1415,2694,1420,2712,1471,2715,1510,2728,1540,2538,1545,2524,1497,2527,1468,2514,1420,2432,1423,2196,1420,2161,1420,2167,1473,2167,1513,2180,1569,1976,1569,1970,1510,1973,1479,1968,1418,1894,1418,1883,1285,1848,1285,1841,1336,1684,1336,1689,1291,1618,1291,1623,1177,1504,1182,1499,1018,1870,1012",
+                    "325,1110,399,1113,423,1026,693,1028,762,1023,762,980,680,980,704,856,1038,861,1040,904,1146,904,1136,1012,1501,1015,1499,1177,1377,1179,1377,1288,1122,1288,1104,1420,1043,1420,1040,1473,1030,1566,826,1563,839,1500,836,1473,844,1418,807,1418,574,1423,492,1420,476,1479,470,1540,282,1542,293,1505,282,1481,303,1420,232,1418"
+                ],
+                unitimage: zeniaJodiTypical3dUnit3_4,
+                image2D: zeniaJodiTypical3dUnit3_4,
+                image2Dstatic: zeniaJodiTypical3dUnit3_4,
+                rooms: [
+                    { id: 1, name: "Master Bedroom", size: "10'6'' x 13'10''", polygon: "1978,567,2503,567,2649,1105,2053,1102" },
+                    { id: 2, name: "M.Toilet", size: "7'6'' x 4'6''", polygon: "1960,397,2333,403,2371,562,1981,567" },
+                    { id: 3, name: "Balcony", size: "6'6'' x 4'0''", polygon: "2148,1092,2529,1097,2561,1208,2556,1283,2582,1381,2156,1378,2145,1272,2169,1219" },
+                    { id: 4, name: "Bedroom-1", size: "10'0'' x 13'0''", polygon: "521,387,1003,390,924,856,383,851" },
+                    { id: 5, name: "Toilet", size: "4'6'' x 7'6''", polygon: "296,382,534,384,447,655,203,652" },
+                    { id: 6, name: "Passage", size: "5'2'' x 3'3''", polygon: "1512,570,1504,694,1819,689,1809,567" },
+                    { id: 7, name: "Walk-through Area", size: "3'7'' x 3'3''", polygon: "1811,564,1817,692,1992,692,1976,564" },
+                    { id: 8, name: "Living", size: "10'6'' x 19'8''", polygon: "953,623,1483,628,1475,1108,871,1116" },
+                    { id: 9, name: "Dining", size: "1'8'' x 9'2''", polygon: "995,379,961,625,1562,628,1554,379" },
+                    { id: 10, name: "Bedroom-2", size: "10'0'' x 10'0''", polygon: "1483,686,1992,692,2053,1102,1480,1108" },
+                    { id: 11, name: "Toilet", size: "7'6'' x 4'6''", polygon: "1578,403,1955,405,1978,567,1583,567" },
+                    { id: 12, name: "Ent.Foyer", size: "4'5'' x 6'0''", polygon: "1011,218,1220,215,1208,387,982,387" },
+                    { id: 13, name: "Kitchen", size: "10'2'' x 7'11''", polygon: "1223,140,1682,148,1689,390,1205,384" },
+                    { id: 14, name: "Utility", size: "3'0'' x 6'2'", polygon: "1684,149,1827,149,1848,335,1692,338" },
+                    { id: 15, name: "Balcony", size: "987,1105,1403,1100,1406,1227,1424,1285,1419,1436,966,1431,985,1306,974,1227" },
+                    { id: 16, name: "Master Bedroom 2", size: "10'6'' x 13'10''", polygon: "513,559,1032,570,955,1110,356,1108" },
+                    { id: 17, name: "Balcony 2", size: "468,1102,847,1110,831,1213,849,1285,839,1380,420,1383,449,1285,433,1224" },
+                    { id: 18, name: "Bedroom-3", size: "10'0'' x 13'0''", polygon: "1999,385,2474,390,2606,843,2071,851" },
+                    { id: 19, name: "Toilet 2", size: "2479,390,2707,390,2805,655,2553,657" },
+                    { id: 20, name: "Passage 2", size: "1197,572,1183,689,1480,689,1480,572" },
+                    { id: 21, name: "Walk-through Area 2", size: "1030,567,1194,564,1181,686,1014,686" },
+                    { id: 22, name: "M.Toilet 2", size: "687,402,1045,405,1019,572,640,564" },
+                    { id: 23, name: "Living 2", size: "1523,660,2050,641,2129,1105,1520,1110" },
+                    { id: 24, name: "Dining 2", size: "1446,379,2013,376,2042,641,1443,660" },
+                    { id: 25, name: "Bedroom-4", size: "10'0'' x 10'0''", polygon: "1003,686,1517,692,1512,1108,947,1108" },
+                    { id: 26, name: "Toilet 3", size: "1043,405,1411,405,1403,570,1019,567" },
+                    { id: 27, name: "Ent.Foyer 2", size: "1777,212,1994,215,2015,376,1782,376" },
+                    { id: 28, name: "Kitchen 2", size: "1313,146,1772,148,1790,390,1298,379" },
+                    { id: 29, name: "Utility 2", size: "1178,146,1316,146,1306,332,1155,332" },
+                    { id: 30, name: "Balcony 3", size: "1594,1100,2000,1094,2015,1230,2015,1288,2039,1434,1583,1434,1576,1301,1591,1224" }
+                ],
+                roomstatic: [
+                    { id: 1, name: "Master Bedroom", size: "10'6'' x 13'10''", polygon: "1909,739,2349,739,2355,1325,1902,1325" },
+                    { id: 2, name: "M.Toilet", size: "7'6'' x 4'6''", polygon: "1909,525,2243,530,2243,737,1907,737" },
+                    { id: 3, name: "Balcony", size: "6'6'' x 4'0''", polygon: "1986,1315,1984,1418,1962,1418,1960,1529,2286,1527,2286,1423,2267,1423,2267,1315" },
+                    { id: 4, name: "Bedroom-1", size: "10'0'' x 13'0''", polygon: "619,522,1030,517,1035,1073,608,1068" },
+                    { id: 5, name: "Toilet", size: "4'6'' x 7'6''", polygon: "404,511,619,508,616,850,404,848" },
+                    { id: 6, name: "Passage", size: "5'2'' x 3'3''", polygon: "1530,739,1530,888,1756,885,1758,742" },
+                    { id: 7, name: "Walk-through Area", size: "3'7'' x 3'3''", polygon: "1756,739,1912,737,1907,885,1756,885" },
+                    { id: 8, name: "Living", size: "10'6'' x 19'8''", polygon: "1040,763,1480,763,1477,1325,1032,1325" },
+                    { id: 9, name: "Dining", size: "1'8'' x 9'2''", polygon: "1032,490,1538,490,1541,768,1032,763" },
+                    { id: 10, name: "Bedroom-2", size: "10'0'' x 10'0''", polygon: "1472,888,1907,890,1907,1325,1472,1325" },
+                    { id: 11, name: "Toilet", size: "7'6'' x 4'6''", polygon: "1565,522,1904,525,1902,737,1570,739" },
+                    { id: 12, name: "Ent.Foyer", size: "4'5'' x 6'0''", polygon: "1027,249,1228,246,1231,493,1027,493" },
+                    { id: 13, name: "Kitchen", size: "10'2'' x 7'11''", polygon: "1231,148,1668,148,1666,496,1228,496" },
+                    { id: 14, name: "Utility", size: "3'0'' x 6'2'", polygon: "1658,154,1809,157,1814,422,1661,422" },
+                    { id: 15, name: "Balcony", size: "1109,1317,1419,1314,1419,1420,1443,1423,1443,1574,1091,1574,1093,1423,1114,1423" },
+                    { id: 16, name: "Master Bedroom 2", size: "674,737,1109,739,1114,1322,672,1325" },
+                    { id: 17, name: "Balcony 2", size: "746,1317,741,1420,725,1418,728,1532,1056,1529,1056,1423,1035,1423,1038,1312" },
+                    { id: 18, name: "Bedroom-3", size: "1978,511,2402,517,2402,1068,1978,1073" },
+                    { id: 19, name: "Toilet 2", size: "2397,514,2609,517,2609,848,2395,851" },
+                    { id: 20, name: "Passage 2", size: "5'2'' x 3'3''", polygon: "1252,739,1250,885,1530,888,1528,745" },
+                    { id: 21, name: "Walk-through Area 2", size: "1096,734,1250,737,1250,880,1096,880" },
+                    { id: 22, name: "M.Toilet 2", size: "776,524,1112,524,1107,742,773,731" },
+                    { id: 23, name: "Living 2", size: "1530,755,1978,753,1978,1322,1533,1328" },
+                    { id: 24, name: "Dining 2", size: "1464,490,1976,490,1978,758,1459,758" },
+                    { id: 25, name: "Bedroom-4", size: "1114,896,1530,885,1523,1333,1101,1320" },
+                    { id: 26, name: "Toilet 3", size: "1112,522,1435,525,1435,739,1104,742" },
+                    { id: 27, name: "Ent.Foyer 2", size: "1785,245,1984,245,1984,497,1780,497" },
+                    { id: 28, name: "Kitchen 2", size: "1342,143,1780,146,1785,496,1342,496" },
+                    { id: 29, name: "Utility 2", size: "1194,143,1345,143,1342,421,1191,419" },
+                    { id: 30, name: "Balcony 3", size: "1594,1311,1586,1409,1568,1412,1568,1563,1915,1563,1915,1422,1894,1420,1886,1306" }
+                ]
+            }
+        ],
+        refugeImage: {
+            6: zeniaRefugeFloorPlan,
+            11: zeniaRefugeFloorPlan,
+            16: zeniaRefugeFloorPlan,
+            21: zeniaRefugeFloorPlan,
+            26: zeniaRefugeFloorPlan,
+            31: zeniaRefugeFloorPlan,
+            36: zeniaRefugeFloorPlan,
+        },
     },
     {
         id: 9,
