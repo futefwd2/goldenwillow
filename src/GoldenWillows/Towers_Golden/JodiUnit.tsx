@@ -19,10 +19,41 @@ export default function JodiUnit() {
     };
     const numericId = Number(id);
     const jodiNum = numericId ? (numericId % 10) : 1; // e.g. 391 -> 1, 392 -> 2
+    const floorNumber = numericId ? Math.floor(numericId / 100) : 2;
+    const isRefugeFloor = [6, 11, 16, 21, 26, 31, 36].includes(floorNumber);
 
     const towerId = location.state?.towerId || 1;
     const tower = data.find((t: any) => t.id === towerId) || data[0];
-    const typicalJodi = tower.jodi?.find((u: any) => (u.id % 10) === jodiNum) || tower.jodi?.[0] || data[0].jodi?.[0];
+    const isZenia = tower.name === "ZENIA" || tower.id === 8;
+    const refugeFloor = (isZenia && isRefugeFloor) ? tower.floors?.find((f: any) => f.title === `FLOOR-${floorNumber}`) || tower.floors?.[1] : null;
+    const unit1 = refugeFloor?.units?.find((u: any) => u.name === "Unit No-1" || (u.id % 100) === 1);
+    const unit2 = refugeFloor?.units?.find((u: any) => u.name === "Unit No-2" || (u.id % 100) === 2);
+
+    const typicalJodi = (isZenia && isRefugeFloor && jodiNum === 1 && unit1) ? {
+        id: numericId,
+        name: "Unit No-1",
+        type: unit1.type,
+        size: unit1.size,
+        hoverColor: unit1.hoverColor,
+        polygons: [unit1.polygonPoints],
+        unitimage: unit1.unitimage,
+        image2D: unit1.image2D,
+        image2Dstatic: unit1.image2Dstatic,
+        rooms: unit1.rooms,
+        roomstatic: unit1.roomstatic
+    } : (isZenia && isRefugeFloor && jodiNum === 5 && unit2) ? {
+        id: numericId,
+        name: "Unit No-2",
+        type: unit2.type,
+        size: unit2.size,
+        hoverColor: unit2.hoverColor,
+        polygons: [unit2.polygonPoints],
+        unitimage: unit2.unitimage,
+        image2D: unit2.image2D,
+        image2Dstatic: unit2.image2Dstatic,
+        rooms: unit2.rooms,
+        roomstatic: unit2.roomstatic
+    } : (tower.jodi?.find((u: any) => (u.id % 10) === jodiNum) || tower.jodi?.[0] || data[0].jodi?.[0]);
 
     const singleUnit = typicalJodi ? {
         ...typicalJodi,
