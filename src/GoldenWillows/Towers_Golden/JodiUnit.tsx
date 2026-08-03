@@ -17,7 +17,6 @@ export default function JodiUnit() {
         return rgbaStr;
     };
     const numericId = Number(id);
-    const floorNum = numericId ? Math.floor(numericId / 100) : 2;
     const jodiNum = numericId ? (numericId % 10) : 1; // e.g. 391 -> 1, 392 -> 2
 
     const jodiUnits = data.flatMap((t: any) => t.jodi || []);

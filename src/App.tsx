@@ -13,13 +13,17 @@ import MainTowerPage from './GoldenWillows/Towers_Golden/MainTowerPage.tsx'
 import FloorPage from './GoldenWillows/Towers_Golden/FloorPage.tsx'
 import UnitPage from './GoldenWillows/Towers_Golden/UnitPage.tsx'
 import JodiUnit from './GoldenWillows/Towers_Golden/JodiUnit.tsx'
+import IrisFloorPage from './GoldenWillows/iris_tower/FloorPage.tsx'
+import IrisUnitPage from './GoldenWillows/iris_tower/UnitPage.tsx'
+import IrisJodiUnit from './GoldenWillows/iris_tower/JodiUnit.tsx'
 import Jasmine from './components/project_detail/jasmine.tsx'
 import Lavender from './components/project_detail/lavender.tsx'
+import Iris from './components/project_detail/iris.tsx';
 
 function App() {
 
   const showNavbarGoldenWillows = ["/", "/project_highlights", "/location",
-    "/project_status", "/projectdetails", "/Jasmine", "/Lavender"];
+    "/project_status", "/projectdetails", "/Jasmine", "/Lavender", "/iris"];
 
   const GoldenWillowsNav = showNavbarGoldenWillows.includes(location.pathname);
   return (
@@ -36,11 +40,15 @@ function App() {
         <Route path="/projectdetails" element={<ProjectDetailsPage />} />
         <Route path="/Jasmine" element={<Jasmine />} />
         <Route path="/Lavender" element={<Lavender />} />
+        <Route path="/iris" element={<Iris />} />
 
         <Route path="/tower_goldenwillows/:towerId" element={<MainTowerPage />} />
         <Route path="/golden_floor/:id" element={<FloorPage />} />
         <Route path="/golden_unit/:id" element={<UnitPage />} />
         <Route path="/golden_jodi/:id" element={<JodiUnit />} />
+        <Route path="/iris_floor/:id" element={<IrisFloorPage />} />
+        <Route path="/iris_unit/:id" element={<IrisUnitPage />} />
+        <Route path="/iris_jodi/:id" element={<IrisJodiUnit />} />
 
 
       </Routes>

@@ -24,7 +24,6 @@ export default function UnitPage() {
 
     // Extract floor number and unit number from the dynamic ID (e.g. 301 -> floorNum = 3, unitNum = 1)
     const numericId = Number(id);
-    const floorNum = numericId ? Math.floor(numericId / 100) : 2;
     const unitNum = numericId ? (numericId % 100) : 1;
 
     // Find the typical unit matching the unit number
