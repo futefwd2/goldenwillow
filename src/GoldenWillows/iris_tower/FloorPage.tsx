@@ -97,7 +97,6 @@ export default function FloorPage() {
 
     // ─── Hover state — syncs sidebar list with SVG polygons ───
     const [hoveredUnit, setHoveredUnit] = useState<number | null>(null);
-
     const [zoomOpen, setZoomOpen] = useState(false);
     const [comingSoonOpen, setComingSoonOpen] = useState(false);
 
@@ -219,13 +218,13 @@ export default function FloorPage() {
                                         style={{ cursor: "pointer", transition: "fill 0.2s ease" }}
                                         onMouseEnter={() => setHoveredUnit(jodiUnit.id)}
                                         onMouseLeave={() => setHoveredUnit(null)}
-                                        onClick={() => navigate(`/iris_jodi/${jodiUnit.id}`, { state: { towerId: tower.id } })}
+                                        onDoubleClick={() => navigate(`/iris_jodi/${jodiUnit.id}`, { state: { towerId: tower.id } })}
                                     />
                                 </Tooltip>
                             );
                         })
                     ) : (
-                        // ── Standard mode — unchanged ──
+                        // ── Standard mode ──
                         singleFloor.units.map((unit: any) => {
                             if (!unit.polygonPoints) return null;
                             const activeColor = getActiveHoverColor(unit, isRefugeFloor);
@@ -242,7 +241,7 @@ export default function FloorPage() {
                                         style={{ cursor: "pointer", transition: "fill 0.2s ease" }}
                                         onMouseEnter={() => setHoveredUnit(unit.id)}
                                         onMouseLeave={() => setHoveredUnit(null)}
-                                        onClick={() => navigate(`/iris_unit/${unit.id}`, { state: { towerId: tower.id } })}
+                                        onDoubleClick={() => navigate(`/iris_unit/${unit.id}`, { state: { towerId: tower.id } })}
                                     />
                                 </Tooltip>
                             );

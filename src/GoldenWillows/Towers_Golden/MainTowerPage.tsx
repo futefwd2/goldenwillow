@@ -48,7 +48,8 @@ export default function MainTowerPage() {
                                         const refugeFloors = [6, 11, 16, 21, 26, 31, 36];
                                         const isRefuge = refugeFloors.includes(floorNum);
                                         const floorParam = isRefuge ? `${floorNum}-Refuge` : `${floorNum}`;
-                                        navigate(`/golden_floor/${floorParam}`, { state: { floorName: floor.name, towerId: e.id } });
+                                        const towerName = e.name.toLowerCase();
+                                        navigate(`/${towerName}_floor/${floorParam}`, { state: { floorName: floor.name, towerId: e.id } });
                                     }}
                                 />
 

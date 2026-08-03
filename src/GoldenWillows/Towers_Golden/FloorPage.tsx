@@ -31,6 +31,7 @@ export default function FloorPage() {
     const location = useLocation();
     const towerId = location.state?.towerId || 1;
     const tower = data.find((t) => t.id === towerId) || data[0];
+    const towerName = tower.name.toLowerCase();
 
     const rawFloor = (isRefugeFloor && tower?.floors?.[1]) ? tower?.floors?.[1] : tower?.floors?.[0];
     const singleFloor = rawFloor ? {
@@ -63,7 +64,6 @@ export default function FloorPage() {
     });
 
     const [hoveredUnit, setHoveredUnit] = useState<number | null>(null);
-    const [selectedUnit, setSelectedUnit] = useState<number | null>(null);
     const [zoomOpen, setZoomOpen] = useState(false);
     const [isJodiMode, setIsJodiMode] = useState(() => {
         return sessionStorage.getItem("isJodiMode") === "true";
@@ -236,17 +236,11 @@ export default function FloorPage() {
                                         >
                                             <polygon
                                                 points={points}
-                                                fill={
-                                                    selectedUnit === targetId
-                                                        ? "rgba(255,112,67,0.5)"
-                                                        : hoveredUnit === targetId
-                                                            ? hoverColor
-                                                            : "transparent"
-                                                }
+                                                fill={hoveredUnit === targetId ? hoverColor : "transparent"}
                                                 style={{ cursor: "pointer" }}
                                                 onMouseEnter={() => setHoveredUnit(targetId)}
                                                 onMouseLeave={() => setHoveredUnit(null)}
-                                                onClick={() => navigate(`/golden_jodi/${targetId}`, { state: { towerId: tower.id } })}
+                                                onDoubleClick={() => navigate(`/${towerName}_jodi/${targetId}`, { state: { towerId: tower.id } })}
                                             />
                                         </Tooltip>
                                     );
@@ -275,19 +269,11 @@ export default function FloorPage() {
                             >
                                 <polygon
                                     points={unit.polygonPoints}
-                                    fill={
-                                        selectedUnit === unit.id
-                                            ? "rgba(255,112,67,0.5)"
-                                            : hoveredUnit === unit.id
-                                                ? unit.hoverColor
-                                                : "transparent"
-                                    }
-                                    // stroke="black"
-                                    // strokeWidth={2}
+                                    fill={hoveredUnit === unit.id ? unit.hoverColor : "transparent"}
                                     style={{ cursor: "pointer" }}
                                     onMouseEnter={() => setHoveredUnit(unit.id)}
                                     onMouseLeave={() => setHoveredUnit(null)}
-                                    onClick={() => navigate(`/golden_unit/${unit.id}`, { state: { towerId: tower.id } })}
+                                    onDoubleClick={() => navigate(`/${towerName}_unit/${unit.id}`, { state: { towerId: tower.id } })}
                                 />
                             </Tooltip>
                         ))

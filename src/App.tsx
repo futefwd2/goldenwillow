@@ -52,6 +52,27 @@ function App() {
         <Route path="/golden_floor/:id" element={<FloorPage />} />
         <Route path="/golden_unit/:id" element={<UnitPage />} />
         <Route path="/golden_jodi/:id" element={<JodiUnit />} />
+
+        {/* Jasmine Tower */}
+        <Route path="/jasmine_floor/:id" element={<FloorPage />} />
+        <Route path="/jasmine_unit/:id" element={<UnitPage />} />
+        <Route path="/jasmine_jodi/:id" element={<JodiUnit />} />
+
+        {/* Lavender Tower */}
+        <Route path="/lavender_floor/:id" element={<FloorPage />} />
+        <Route path="/lavender_unit/:id" element={<UnitPage />} />
+        <Route path="/lavender_jodi/:id" element={<JodiUnit />} />
+
+        {/* Aster Tower */}
+        <Route path="/aster_floor/:id" element={<FloorPage />} />
+        <Route path="/aster_unit/:id" element={<UnitPage />} />
+        <Route path="/aster_jodi/:id" element={<JodiUnit />} />
+
+        {/* Zenia Tower */}
+        <Route path="/zenia_floor/:id" element={<FloorPage />} />
+        <Route path="/zenia_unit/:id" element={<UnitPage />} />
+        <Route path="/zenia_jodi/:id" element={<JodiUnit />} />
+
         <Route path="/iris_floor/:id" element={<IrisFloorPage />} />
         <Route path="/iris_unit/:id" element={<IrisUnitPage />} />
         <Route path="/iris_jodi/:id" element={<IrisJodiUnit />} />

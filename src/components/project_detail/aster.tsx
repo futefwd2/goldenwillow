@@ -108,7 +108,7 @@ export default function Aster() {
                     const refugeFloors = [6, 11, 16, 21, 26, 31, 36];
                     const isRefuge = refugeFloors.includes(floorNum);
                     const floorParam = isRefuge ? `${floorNum}-Refuge` : `${floorNum}`;
-                    navigate(`/golden_floor/${floorParam}`, { state: { floorName: floor.name, towerId: 9 } });
+                    navigate(`/aster_floor/${floorParam}`, { state: { floorName: floor.name, towerId: 9 } });
                   }}
                 />
               ) : (
@@ -131,7 +131,7 @@ export default function Aster() {
                     const refugeFloors = [6, 11, 16, 21, 26, 31, 36];
                     const isRefuge = refugeFloors.includes(floorNum);
                     const floorParam = isRefuge ? `${floorNum}-Refuge` : `${floorNum}`;
-                    navigate(`/golden_floor/${floorParam}`, { state: { floorName: floor.name, towerId: 9 } });
+                    navigate(`/aster_floor/${floorParam}`, { state: { floorName: floor.name, towerId: 9 } });
                   }}
                 />
               )}
