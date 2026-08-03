@@ -176,6 +176,27 @@ import zeniaJodiRefugeFloorPlan from "../assets/Zenia/Jodi/Zenia Jodi floor Refu
 import zeniaJodiTypical3dUnit1_2 from "../assets/Zenia/Jodi/Typical/3D/Unit1 &unit 2.jpg";
 import zeniaJodiTypical3dUnit3_4 from "../assets/Zenia/Jodi/Typical/3D/Unit3 &unit 4.jpg";
 
+import zeniaJodiTypical2dUnit1_2 from "../assets/Zenia/Jodi/Typical/2D/unit1 & unit2.jpg";
+import zeniaJodiTypical2dUnit3_4 from "../assets/Zenia/Jodi/Typical/2D/unit3 & unit4.jpg";
+
+import zeniaJodiTypical2dStaticUnit1_2 from "../assets/Zenia/Jodi/Typical/2D static/unit1 & unit2.jpg";
+import zeniaJodiTypical2dStaticUnit3_4 from "../assets/Zenia/Jodi/Typical/2D static/unit3 & unit4.jpg";
+
+// Zenia Tower Jodi Refuge 3D Layouts
+import zeniaJodiRefuge3dUnit1 from "../assets/Zenia/Jodi/Refuge/3D/unit1.jpg";
+import zeniaJodiRefuge3dUnit2 from "../assets/Zenia/Jodi/Refuge/3D/unit2.jpg";
+import zeniaJodiRefuge3dUnit3_4 from "../assets/Zenia/Jodi/Refuge/3D/unit3 & unit 4.jpg";
+
+// Zenia Tower Jodi Refuge 2D Layouts
+import zeniaJodiRefuge2dUnit1 from "../assets/Zenia/Jodi/Refuge/2D/unit1.jpg";
+import zeniaJodiRefuge2dUnit2 from "../assets/Zenia/Jodi/Refuge/2D/unit2.jpg";
+import zeniaJodiRefuge2dUnit3_4 from "../assets/Zenia/Jodi/Refuge/2D/unit3 & unit 4.jpg";
+
+// Zenia Tower Jodi Refuge 2D Static Layouts
+import zeniaJodiRefugeStaticUnit1 from "../assets/Zenia/Jodi/Refuge/2D static/unit1.jpg";
+import zeniaJodiRefugeStaticUnit2 from "../assets/Zenia/Jodi/Refuge/2D static/unit2.jpg";
+import zeniaJodiRefugeStaticUnit3_4 from "../assets/Zenia/Jodi/Refuge/2D static/unit3 & unit 4.jpg";
+
 
 export const data = [
     {
@@ -9277,7 +9298,7 @@ export const data = [
         hoverColor: "rgba(255,112,67,0.4)",
         description: [
             {
-                towerName: "Arcadia",
+                towerName: "zenia",
                 configuration: "2 BHK & 3 BHK",
             },
         ],
@@ -10317,6 +10338,12 @@ export const data = [
                                 polygon: "1003,808,1059,389,603,381,484,802",
                             },
                             {
+                                id: 3,
+                                name: "Master Bedroom passage",
+                                size: "2'11'' x 3'3''",
+                                polygon: "1154,704,1152,802,1030,808,1019,702"
+                            },
+                            {
                                 id: 4,
                                 name: "Bedroom",
                                 size: "10'6'' x 12'6''",
@@ -10383,6 +10410,12 @@ export const data = [
                                 name: "Master Bedroom",
                                 size: "11'0'' x 14'6''",
                                 polygon: "1141,429,696,427,696,1010,1136,1007",
+                            },
+                            {
+                                id: 3,
+                                name: "Master Bedroom passage",
+                                size: "2'11'' x 3'3''",
+                                polygon: "1263,874,1263,1012,1144,1012,1141,872"
                             },
                             {
                                 id: 4,
@@ -10464,6 +10497,12 @@ export const data = [
                                 polygon: "1995,808,1936,384,2392,382,2511,806",
                             },
                             {
+                                id: 1,
+                                name: "Master Bedroom passage",
+                                size: "2'11'' x 3'3''",
+                                polygon: "1849,803,1846,700,1973,694,1973,806"
+                            },
+                            {
                                 id: 3,
                                 name: "Bedroom",
                                 size: "10'6'' x 12'6''",
@@ -10530,6 +10569,12 @@ export const data = [
                                 name: "Master Bedroom",
                                 size: "11'0'' x 14'6''",
                                 polygon: "1857,1012,1857,424,2302,421,2305,1007",
+                            },
+                            {
+                                id: 1,
+                                name: "Master Bedroom passage",
+                                size: "2'11'' x 3'3''",
+                                polygon: "1735,875,1738,1007,1860,1010,1860,872"
                             },
                             {
                                 id: 3,
@@ -10998,8 +11043,8 @@ export const data = [
                     "1490,564,1485,413,1572,411,1572,371,1610,366,1618,397,1721,392,1721,371,1822,363,1816,302,2010,302,2012,360,2065,360,2071,339,2214,334,2246,337,2254,360,2280,363,2272,299,2389,291,2399,358,2431,360,2468,535,2439,538,2456,607,2312,609,2301,546,2180,546,2185,604,2146,609,2154,689,1889,684,1785,684,1777,567"
                 ],
                 unitimage: zeniaJodiTypical3dUnit1_2,
-                image2D: zeniaJodiTypical3dUnit1_2,
-                image2Dstatic: zeniaJodiTypical3dUnit1_2,
+                image2D: zeniaJodiTypical2dUnit1_2,
+                image2Dstatic: zeniaJodiTypical2dStaticUnit1_2,
                 rooms: [
                     { id: 1, name: "Bedroom 3", size: "11'0\" x 14'6\"", polygon: "426,890,473,657,243,662,155,888" },
                     { id: 3, name: "Bedroom 2", size: "10'6\" x 12'6\"", polygon: "436,829,487,633,720,633,680,827" },
@@ -11068,8 +11113,8 @@ export const data = [
                     "1488,951,1488,1094,1385,1086,1385,1177,1173,1182,1173,1222,1088,1222,1078,1328,813,1314,828,1222,749,1224,749,1185,659,1177,646,1261,415,1261,412,1238,394,1235,373,1330,224,1325,245,1230,206,1227,264,986,240,986,259,904,418,898,428,840,542,845,548,811,701,814,677,986,1067,986,1078,880,1181,882,1189,954"
                 ],
                 unitimage: zeniaJodiTypical3dUnit3_4,
-                image2D: zeniaJodiTypical3dUnit3_4,
-                image2Dstatic: zeniaJodiTypical3dUnit3_4,
+                image2D: zeniaJodiTypical2dUnit3_4,
+                image2Dstatic: zeniaJodiTypical2dStaticUnit3_4,
                 rooms: [
                     { id: 1, name: "Bedroom 1", size: "21'0\" x 10'6\"", polygon: "1978,567,2503,567,2649,1105,2053,1102" },
                     { id: 2, name: "Toilet", size: "10'10\" x 4'8\"", polygon: "1960,397,2333,403,2371,562,1981,567" },
@@ -11100,6 +11145,382 @@ export const data = [
                     { id: 28, name: "Walk In Wardrobe", size: "5'6\" x 5'2\"", polygon: "1313,146,1772,148,1790,390,1298,379" },
                     { id: 29, name: "Passage", size: "13'9\" x 3'3\"", polygon: "1178,146,1316,146,1306,332,1155,332" },
                     { id: 30, name: "Balcony", size: "7'0\" x 5'0\"", polygon: "1594,1100,2000,1094,2015,1230,2015,1288,2039,1434,1583,1434,1576,1301,1591,1224" }
+                ],
+                roomstatic: [
+                    { id: 1, name: "Bedroom 1", size: "21'0\" x 10'6\"", polygon: "1909,739,2349,739,2355,1325,1902,1325" },
+                    { id: 2, name: "Toilet", size: "10'10\" x 4'8\"", polygon: "1909,525,2243,530,2243,737,1907,737" },
+                    { id: 3, name: "Balcony", size: "13'0\" x 5'0\"", polygon: "1986,1315,1984,1418,1962,1418,1960,1529,2286,1527,2286,1423,2267,1423,2267,1315" },
+                    { id: 4, name: "Study", size: "11'0\" x 10'6\"", polygon: "619,522,1030,517,1035,1073,608,1068" },
+                    { id: 5, name: "Toilet", size: "4'6\" x 8'0\"", polygon: "404,511,619,508,616,850,404,848" },
+                    { id: 6, name: "Passage", size: "5'6\" x 5'5\"", polygon: "1530,739,1530,888,1756,885,1758,742" },
+                    { id: 7, name: "Walk In Wardrobe", size: "11'0\" x 10'5\"", polygon: "1756,739,1912,737,1907,885,1756,885" },
+                    { id: 8, name: "Living", size: "21'10\" x 14'3\"", polygon: "1040,763,1480,763,1477,1325,1032,1325" },
+                    { id: 9, name: "Dining", size: "11'0\" x 13'0\"", polygon: "1032,490,1538,490,1541,768,1032,763" },
+                    { id: 11, name: "Passage", size: "12'4\" x 3'3\"", polygon: "1565,522,1904,525,1902,737,1570,739" },
+                    { id: 12, name: "Entrance Foyer", size: "5'6\" x 6'11\"", polygon: "1027,249,1228,246,1231,493,1027,493" },
+                    { id: 13, name: "Kitchen", size: "8'4\" x 11'2\"", polygon: "1231,148,1668,148,1666,496,1228,496" },
+                    { id: 14, name: "Study", size: "5'0\" x 8'7\"", polygon: "1658,154,1809,157,1814,422,1661,422" },
+                    { id: 15, name: "Balcony", size: "13'0\" x 5'0\"", polygon: "1109,1317,1419,1314,1419,1420,1443,1423,1443,1574,1091,1574,1093,1423,1114,1423" },
+                    { id: 16, name: "Bedroom 2", size: "11'0\" x 15'0\"", polygon: "674,737,1109,739,1114,1322,672,1325" },
+                    { id: 17, name: "Walk In Wardrobe", size: "5'6\" x 5'2\"", polygon: "746,1317,741,1420,725,1418,728,1532,1056,1529,1056,1423,1035,1423,1038,1312" },
+                    { id: 18, name: "Bedroom", size: "11'0\" x 15'0\"", polygon: "1978,511,2402,517,2402,1068,1978,1073" },
+                    { id: 19, name: "Toilet", size: "8'0\" x 5'0\"", polygon: "2397,514,2609,517,2609,848,2395,851" },
+                    { id: 20, name: "Passage", size: "34'6\" x 3'0\"", polygon: "1252,739,1250,885,1530,888,1528,745" },
+                    { id: 21, name: "Utility", size: "6'0\" x 3'3\"", polygon: "1096,734,1250,737,1250,880,1096,880" },
+                    { id: 22, name: "Bedroom 2 Passage", size: "2'10\" x 3'3\"", polygon: "776,524,1112,524,1107,742,773,731" },
+                    { id: 23, name: "Lounge", size: "11'0\" x 16'9\"", polygon: "1530,755,1978,753,1978,1322,1533,1328" },
+                    { id: 24, name: "Walk In Wardrobe", size: "8'6\" x 11'4\" & 6'0\" x 3'3\"", polygon: "1464,490,1976,490,1978,758,1459,758" },
+                    { id: 25, name: "Balcony", size: "7'0\" x 5'0\"", polygon: "1114,896,1530,885,1523,1333,1101,1320" },
+                    { id: 26, name: "Toilet", size: "8'0\" x 5'0\"", polygon: "1112,522,1435,525,1435,739,1104,742" },
+                    { id: 27, name: "Pooja Room", size: "5'6\" x 4'9\"", polygon: "1785,245,1984,245,1984,497,1780,497" },
+                    { id: 28, name: "Walk In Wardrobe", size: "5'6\" x 5'2\"", polygon: "1342,143,1780,146,1785,496,1342,496" },
+                    { id: 29, name: "Passage", size: "13'9\" x 3'3\"", polygon: "1194,143,1345,143,1342,421,1191,419" },
+                    { id: 30, name: "Balcony", size: "7'0\" x 5'0\"", polygon: "1594,1311,1586,1409,1568,1412,1568,1563,1915,1563,1915,1422,1894,1420,1886,1306" }
+                ]
+            }
+        ],
+        jodiRefuge: [
+            {
+                id: 901,
+                name: "Unit No-1",
+                type: "2 BHK",
+                size: "1100 sq.ft",
+                hoverColor: "rgba(253,230,23,0.35)",
+                polygons: [
+                    "1189,630,1215,363,1149,365,1157,302,969,299,958,365,900,357,903,341,725,339,725,363,699,360,707,299,590,299,574,360,542,363,505,537,532,537,516,606,659,612,669,543,786,543,786,598,826,609,815,686,1189,680"
+                ],
+                unitimage: zeniaJodiRefuge3dUnit1,
+                image2D: zeniaJodiRefuge2dUnit1,
+                image2Dstatic: zeniaJodiRefugeStaticUnit1,
+                rooms: [
+                    {
+                        id: 2,
+                        name: "Master Bedroom",
+                        size: "11'0'' x 14'6''",
+                        polygon: "1003,808,1059,389,603,381,484,802",
+                    },
+                    {
+                        id: 4,
+                        name: "Bedroom",
+                        size: "10'6'' x 12'6''",
+                        polygon: "1035,688,1080,336,1510,344,1512,691",
+                    },
+                    {
+                        id: 10,
+                        name: "Balcony",
+                        size: "7'0'' x 5'0''",
+                        polygon: "988,384,1012,249,717,252,680,382",
+                    },
+                    {
+                        id: 5,
+                        name: "Passage",
+                        size: "8'0'' x 3'3''",
+                        polygon: "1157,688,1144,808,1517,805,1523,696",
+                    },
+                    {
+                        id: 7,
+                        name: "Master Toilet",
+                        size: "8'0'' x 5'0''",
+                        polygon: "966,805,924,988,518,983,558,805",
+                    },
+                    {
+                        id: 8,
+                        name: "Toilet",
+                        size: "8'0'' x 4'6''",
+                        polygon: "1284,816,1282,975,1700,972,1698,808",
+                    },
+                    {
+                        id: 9,
+                        name: "Living/Dining",
+                        size: "19'1'' x 14'3''",
+                        polygon: "1523,803,1520,392,2310,392,2411,798",
+                    },
+                    {
+                        id: 12,
+                        name: "Entrance Foyer",
+                        size: "5'6'' x 7'0''",
+                        polygon: "2154,805,2416,794,2490,1049,2199,1051",
+                    },
+                    {
+                        id: 13,
+                        name: "Kitchen",
+                        size: "8'6'' x 10'9''",
+                        polygon: "1719,813,2124,810,2188,1210,1740,1210",
+                    },
+                    {
+                        id: 14,
+                        name: "Utility",
+                        size: "6'0'' x 3'2''",
+                        polygon: "1409,998,1411,1131,1732,1134,1730,1006",
+                    },
+                    {
+                        id: 15,
+                        name: "Balcony",
+                        size: "11'6'' x 5'0''",
+                        polygon: "1674,392,1663,249,2135,249,2161,386",
+                    },
+                ],
+                roomstatic: [
+                    {
+                        id: 2,
+                        name: "Master Bedroom",
+                        size: "11'0'' x 14'6''",
+                        polygon: "1141,429,696,427,696,1010,1136,1007",
+                    },
+                    {
+                        id: 4,
+                        name: "Bedroom",
+                        size: "10'6'' x 12'6''",
+                        polygon: "1154,852,1152,354,1570,354,1578,858",
+                    },
+                    {
+                        id: 10,
+                        name: "Balcony",
+                        size: "7'0'' x 5'0''",
+                        polygon: "1070,412,1064,198,775,192,770,410",
+                    },
+                    {
+                        id: 5,
+                        name: "Passage",
+                        size: "8'0'' x 3'3''",
+                        polygon: "1263,877,1260,1010,1576,1010,1581,864",
+                    },
+                    {
+                        id: 7,
+                        name: "Master Toilet",
+                        size: "8'0'' x 5'0''",
+                        polygon: "1101,1241,1104,1013,762,1018,765,1225",
+                    },
+                    {
+                        id: 8,
+                        name: "Toilet",
+                        size: "8'0'' x 4'6''",
+                        polygon: "1390,1018,1388,1219,1719,1208,1719,1018",
+                    },
+                    {
+                        id: 9,
+                        name: "Living/Dining",
+                        size: "19'1'' x 14'3''",
+                        polygon: "1581,1007,1584,432,2350,437,2350,1007",
+                    },
+                    {
+                        id: 12,
+                        name: "Entrance Foyer",
+                        size: "5'6'' x 7'0''",
+                        polygon: "2124,1296,2111,1010,2352,1008,2347,1286",
+                    },
+                    {
+                        id: 13,
+                        name: "Kitchen",
+                        size: "8'6'' x 10'9''",
+                        polygon: "1740,1230,1745,1450,2095,1461,2095,1021,1740,1015",
+                    },
+                    {
+                        id: 14,
+                        name: "Utility",
+                        size: "6'0'' x 3'2''",
+                        polygon: "1488,1241,1486,1376,1743,1378,1737,1241",
+                    },
+                    {
+                        id: 15,
+                        name: "Balcony",
+                        size: "11'6'' x 5'0''",
+                        polygon: "1727,419,1727,209,2201,209,2196,435",
+                    },
+                ]
+            },
+            {
+                id: 905,
+                name: "Unit No-2",
+                type: "2 BHK",
+                size: "1100 sq.ft",
+                hoverColor: "rgba(253,230,23,0.35)",
+                polygons: [
+                    "1780,633,1761,363,1817,363,1817,299,2005,299,2013,368,2066,363,2066,336,2238,336,2244,357,2278,357,2267,299,2387,299,2395,363,2432,365,2469,532,2440,543,2450,604,2310,617,2299,548,2183,543,2188,604,2143,612,2156,686,1891,683,1785,686"
+                ],
+                unitimage: zeniaJodiRefuge3dUnit2,
+                image2D: zeniaJodiRefuge2dUnit2,
+                image2Dstatic: zeniaJodiRefugeStaticUnit2,
+                rooms: [
+                    {
+                        id: 2,
+                        name: "Master Bedroom",
+                        size: "11'0'' x 14'6''",
+                        polygon: "1995,808,1936,384,2392,382,2511,806",
+                    },
+                    {
+                        id: 3,
+                        name: "Bedroom",
+                        size: "10'6'' x 12'6''",
+                        polygon: "1488,686,1488,339,1918,331,1968,686",
+                    },
+                    {
+                        id: 4,
+                        name: "Balcony",
+                        size: "7'0'' x 5'0''",
+                        polygon: "2016,376,1989,243,2286,241,2313,376",
+                    },
+                    {
+                        id: 5,
+                        name: "Passage",
+                        size: "8'0'' x 3'3''",
+                        polygon: "1846,697,1854,811,1480,806,1475,697",
+                    },
+                    {
+                        id: 7,
+                        name: "Master Toilet",
+                        size: "8'0'' x 5'0''",
+                        polygon: "2037,813,2074,1001,2482,991,2440,808",
+                    },
+                    {
+                        id: 8,
+                        name: "Toilet",
+                        size: "8'0'' x 4'6''",
+                        polygon: "1708,811,1711,978,1305,975,1308,811",
+                    },
+                    {
+                        id: 9,
+                        name: "Living/Dining",
+                        size: "19'1'' x 14'3''",
+                        polygon: "691,392,577,806,1480,806,1475,392",
+                    },
+                    {
+                        id: 12,
+                        name: "Entrance Foyer",
+                        size: "5'6'' x 7'0''",
+                        polygon: "842,808,587,806,510,1052,799,1047",
+                    },
+                    {
+                        id: 13,
+                        name: "Kitchen",
+                        size: "8'6'' x 10'9''",
+                        polygon: "873,811,1279,814,1255,1214,802,1222",
+                    },
+                    {
+                        id: 14,
+                        name: "Utility",
+                        size: "6'0'' x 3'2''",
+                        polygon: "1271,1002,1268,1126,1581,1134,1584,1007",
+                    },
+                    {
+                        id: 15,
+                        name: "Balcony",
+                        size: "11'6'' x 5'0''",
+                        polygon: "834,384,868,249,1335,249,1327,390",
+                    },
+                ],
+                roomstatic: [
+                    {
+                        id: 2,
+                        name: "Master Bedroom",
+                        size: "11'0'' x 14'6''",
+                        polygon: "1857,1012,1857,424,2302,421,2305,1007",
+                    },
+                    {
+                        id: 3,
+                        name: "Bedroom",
+                        size: "10'6'' x 12'6''",
+                        polygon: "1846,854,1846,356,1425,351,1419,860",
+                    },
+                    {
+                        id: 4,
+                        name: "Balcony",
+                        size: "7'0'' x 5'0''",
+                        polygon: "1931,406,1931,197,2222,197,2228,406",
+                    },
+                    {
+                        id: 5,
+                        name: "Passage",
+                        size: "8'0'' x 3'3''",
+                        polygon: "1414,868,1414,1008,1735,1011,1735,876",
+                    },
+                    {
+                        id: 7,
+                        name: "Master Toilet",
+                        size: "8'0'' x 5'0''",
+                        polygon: "1889,1019,1896,1234,2236,1226,2238,1022",
+                    },
+                    {
+                        id: 8,
+                        name: "Toilet",
+                        size: "8'0'' x 4'6''",
+                        polygon: "1279,1016,1276,1201,1608,1220,1618,1019",
+                    },
+                    {
+                        id: 9,
+                        name: "Living/Dining",
+                        size: "19'1'' x 14'3''",
+                        polygon: "648,1003,648,436,1411,436,1417,1003",
+                    },
+                    {
+                        id: 12,
+                        name: "Entrance Foyer",
+                        size: "5'6'' x 7'0''",
+                        polygon: "871,1008,648,1008,646,1284,868,1289",
+                    },
+                    {
+                        id: 13,
+                        name: "Kitchen",
+                        size: "8'6'' x 10'9''",
+                        polygon: "1250,1456,895,1459,900,1021,1250,1019",
+                    },
+                    {
+                        id: 14,
+                        name: "Utility",
+                        size: "6'0'' x 3'2''",
+                        polygon: "1252,1236,1252,1379,1499,1376,1507,1236",
+                    },
+                    {
+                        id: 15,
+                        name: "Balcony",
+                        size: "11'6'' x 5'0''",
+                        polygon: "797,417,799,205,1263,208,1266,422",
+                    },
+                ]
+            },
+            {
+                id: 902,
+                name: "Unit No.3 & Unit No.4",
+                type: "4 BHK Jodi",
+                size: "2800 sq.ft",
+                hoverColor: "rgba(215, 94, 234, 0.47)",
+                polygons: [
+                    "1494,1092,1494,951,1798,954,1796,882,1907,885,1926,980,2267,986,2236,753,2334,750,2344,814,2519,816,2535,906,2689,904,2790,1269,2752,1269,2758,1320,2612,1328,2601,1267,2161,1261,2169,1317,1910,1320,1899,1227,1814,1222,1817,1182,1608,1185,1600,1086",
+                    "1488,951,1488,1094,1385,1086,1385,1177,1173,1182,1173,1222,1088,1222,1078,1328,813,1314,828,1222,749,1224,749,1185,659,1177,646,1261,415,1261,412,1238,394,1235,373,1330,224,1325,245,1230,206,1227,264,986,240,986,259,904,418,898,428,840,542,845,548,811,701,814,677,986,1067,986,1078,880,1181,882,1189,954"
+                ],
+                unitimage: zeniaJodiRefuge3dUnit3_4,
+                image2D: zeniaJodiRefuge2dUnit3_4,
+                image2Dstatic: zeniaJodiRefugeStaticUnit3_4,
+                rooms: [
+                    { id: 1, name: "Bedroom 1", size: "21'0\" x 10'6\"", polygon: "1978,567,2503,567,2649,1105,2053,1102" },
+                    { id: 2, name: "Toilet", size: "10'10\" x 4'8\"", polygon: "1960,397,2333,403,2371,562,1981,567" },
+                    { id: 3, name: "Balcony", size: "13'0\" x 5'0\"", polygon: "2148,1092,2529,1097,2561,1208,2556,1283,2582,1381,2156,1378,2145,1272,2169,1219" },
+                    { id: 4, name: "Study", size: "11'0\" x 10'6\"", polygon: "521,387,1003,390,924,856,383,851" },
+                    { id: 5, name: "Toilet", size: "4'6\" x 8'0\"", polygon: "296,382,534,384,447,655,203,652" },
+                    { id: 6, name: "Passage", size: "5'6\" x 5'5\"", polygon: "1512,570,1504,694,1819,689,1809,567" },
+                    { id: 7, name: "Walk In Wardrobe", size: "11'0\" x 10'5\"", polygon: "1811,564,1817,692,1992,692,1976,564" },
+                    { id: 8, name: "Living", size: "21'10\" x 14'3\"", polygon: "953,623,1483,628,1475,1108,871,1116" },
+                    { id: 9, name: "Dining", size: "11'0\" x 13'0\"", polygon: "995,379,961,625,1562,628,1554,379" },
+                    { id: 11, name: "Passage", size: "12'4\" x 3'3\"", polygon: "1578,403,1955,405,1978,567,1583,567" },
+                    { id: 12, name: "Entrance Foyer", size: "5'6\" x 6'11\"", polygon: "1011,218,1220,215,1208,387,982,387" },
+                    { id: 13, name: "Kitchen", size: "8'4\" x 11'2\"", polygon: "1223,140,1682,148,1689,390,1205,384" },
+                    { id: 14, name: "Study", size: "5'0\" x 8'7\"", polygon: "1684,149,1827,149,1848,335,1692,338" },
+                    { id: 15, name: "Balcony", size: "13'0\" x 5'0\"", polygon: "987,1105,1403,1100,1406,1227,1424,1285,1419,1436,966,1431,985,1306,974,1227" },
+                    { id: 16, name: "Bedroom 2", size: "11'0\" x 15'0\"", polygon: "513,559,1032,570,955,1110,356,1108" },
+                    { id: 17, name: "Walk In Wardrobe", size: "5'6\" x 5'2\"", polygon: "468,1102,847,1110,831,1213,849,1285,839,1380,420,1383,449,1285,433,1224" },
+                    { id: 18, name: "Bedroom", size: "11'0\" x 15'0\"", polygon: "1999,385,2474,390,2606,843,2071,851" },
+                    { id: 19, name: "Toilet", size: "8'0\" x 5'0\"", polygon: "2479,390,2707,390,2805,655,2553,657" },
+                    { id: 20, name: "Passage", size: "34'6\" x 3'0\"", polygon: "1197,572,1183,689,1480,689,1480,572" },
+                    { id: 21, name: "Utility", size: "6'0\" x 3'3\"", polygon: "1030,567,1194,564,1181,686,1014,686" },
+                    { id: 22, name: "Bedroom 2 Passage", size: "2'10\" x 3'3\"", polygon: "687,402,1045,405,1019,572,640,564" },
+                    { id: 23, name: "Lounge", size: "11'0\" x 16'9\"", polygon: "1523,660,2050,641,2129,1105,1520,1110" },
+                    { id: 24, name: "Walk In Wardrobe", size: "8'6\" x 11'4\" & 6'0\" x 3'3\"", polygon: "1464,490,1976,490,1978,758,1459,758" },
+                    { id: 25, name: "Balcony", size: "7'0\" x 5'0\"", polygon: "1114,896,1530,885,1523,1333,1101,1320" },
+                    { id: 26, name: "Toilet", size: "8'0\" x 5'0\"", polygon: "1043,405,1411,405,1403,570,1019,567" },
+                    { id: 27, name: "Pooja Room", size: "5'6\" x 4'9\"", polygon: "1777,212,1994,215,2015,376,1782,376" },
+                    { id: 28, name: "Walk In Wardrobe", size: "5'6\" x 5'2\"", polygon: "1313,146,1772,148,1790,390,1298,379" },
+                    { id: 29, name: "Passage", size: "13'9\" x 3'3\"", polygon: "1178,146,1316,146,1306,332,1155,332" },
+                    { id: 30, name: "Balcony", size: "7'0\" x 5'0\"", polygon: "1594,1311,1586,1409,1568,1412,1568,1563,1915,1563,1915,1422,1894,1420,1886,1306" }
                 ],
                 roomstatic: [
                     { id: 1, name: "Bedroom 1", size: "21'0\" x 10'6\"", polygon: "1909,739,2349,739,2355,1325,1902,1325" },

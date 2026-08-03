@@ -47,7 +47,13 @@ export default function FloorPage() {
         })
     } : null;
 
-    const mappedJodi = (tower as any).jodi?.map((jodiUnit: any) => {
+    const isZenia = tower?.name === "ZENIA" || tower?.id === 8;
+
+    const rawJodiList = (isZenia && isRefugeFloor && (tower as any).jodiRefuge)
+        ? (tower as any).jodiRefuge
+        : (tower as any).jodi;
+
+    const mappedJodi = rawJodiList?.map((jodiUnit: any) => {
         const jodiNum = jodiUnit.id % 10;
         const dynamicId = floorNumber * 100 + 90 + jodiNum;
         return {
@@ -55,8 +61,6 @@ export default function FloorPage() {
             id: dynamicId,
         };
     });
-
-    const isZenia = tower?.name === "ZENIA" || tower?.id === 8;
 
     const [hoveredUnit, setHoveredUnit] = useState<number | null>(null);
     const [selectedUnit, setSelectedUnit] = useState<number | null>(null);
@@ -182,7 +186,8 @@ export default function FloorPage() {
                         mappedJodi.map((jodiUnit: any) => (
                             <g key={jodiUnit.id}>
                                 {jodiUnit.polygons.map((pts: string, idx: number) => {
-                                    const isJodi1 = jodiUnit.id % 10 === 1;
+                                    const jodiNum = jodiUnit.id % 10;
+                                    const isJodi1 = jodiNum === 1;
                                     const name = (isZenia && isRefugeFloor && isJodi1)
                                         ? (idx === 0 ? "Unit No-1" : "Unit No-2")
                                         : jodiUnit.name;
@@ -191,14 +196,21 @@ export default function FloorPage() {
                                         : jodiUnit.id;
 
                                     const hoverColor = (isZenia && isRefugeFloor)
-                                        ? (isJodi1 ? "rgba(253,230,23,0.35)" : "rgba(230,46,230,0.35)")
+                                        ? (jodiNum === 1 || jodiNum === 5 ? "rgba(253,230,23,0.35)" : "rgba(230,46,230,0.35)")
                                         : jodiUnit.hoverColor;
 
                                     let points = pts;
                                     if (isZenia && isRefugeFloor) {
                                         const rawRefugeFloor = tower.floors?.find((f: any) => f.title === `FLOOR-${floorNumber}`) || tower.floors?.[1];
                                         if (rawRefugeFloor && rawRefugeFloor.units) {
-                                            const uIdx = isJodi1 ? idx : (idx + 2);
+                                            let uIdx = 0;
+                                            if (jodiNum === 1) {
+                                                uIdx = idx;
+                                            } else if (jodiNum === 5) {
+                                                uIdx = 1;
+                                            } else {
+                                                uIdx = idx + 2;
+                                            }
                                             points = rawRefugeFloor.units[uIdx]?.polygonPoints || pts;
                                         }
                                     }

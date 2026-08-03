@@ -29,31 +29,19 @@ export default function JodiUnit() {
     const unit1 = refugeFloor?.units?.find((u: any) => u.name === "Unit No-1" || (u.id % 100) === 1);
     const unit2 = refugeFloor?.units?.find((u: any) => u.name === "Unit No-2" || (u.id % 100) === 2);
 
-    const typicalJodi = (isZenia && isRefugeFloor && jodiNum === 1 && unit1) ? {
-        id: numericId,
-        name: "Unit No-1",
-        type: unit1.type,
-        size: unit1.size,
-        hoverColor: unit1.hoverColor,
-        polygons: [unit1.polygonPoints],
-        unitimage: unit1.unitimage,
-        image2D: unit1.image2D,
-        image2Dstatic: unit1.image2Dstatic,
+    const typicalJodiObj = (isZenia && isRefugeFloor && (tower as any).jodiRefuge)
+        ? (tower as any).jodiRefuge.find((u: any) => (u.id % 10) === jodiNum)
+        : (tower.jodi?.find((u: any) => (u.id % 10) === jodiNum) || tower.jodi?.[0] || data[0].jodi?.[0]);
+
+    const typicalJodi = (isZenia && isRefugeFloor && jodiNum === 1 && unit1 && typicalJodiObj) ? {
+        ...typicalJodiObj,
         rooms: unit1.rooms,
         roomstatic: unit1.roomstatic
-    } : (isZenia && isRefugeFloor && jodiNum === 5 && unit2) ? {
-        id: numericId,
-        name: "Unit No-2",
-        type: unit2.type,
-        size: unit2.size,
-        hoverColor: unit2.hoverColor,
-        polygons: [unit2.polygonPoints],
-        unitimage: unit2.unitimage,
-        image2D: unit2.image2D,
-        image2Dstatic: unit2.image2Dstatic,
+    } : (isZenia && isRefugeFloor && jodiNum === 5 && unit2 && typicalJodiObj) ? {
+        ...typicalJodiObj,
         rooms: unit2.rooms,
         roomstatic: unit2.roomstatic
-    } : (tower.jodi?.find((u: any) => (u.id % 10) === jodiNum) || tower.jodi?.[0] || data[0].jodi?.[0]);
+    } : typicalJodiObj;
 
     const singleUnit = typicalJodi ? {
         ...typicalJodi,
