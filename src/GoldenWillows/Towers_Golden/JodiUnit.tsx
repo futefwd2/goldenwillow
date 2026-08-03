@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { data } from '../../data/GoldenWillowsData';
 import { useState } from "react";
 import { Tooltip, Button, IconButton } from '@mui/material';
@@ -9,6 +9,7 @@ type LayoutType = "default" | "2D" | "2Dstatic";
 
 export default function JodiUnit() {
     const { id } = useParams<{ id: string }>();
+    const location = useLocation();
     const getSolidColor = (rgbaStr: string, alpha: string = "1") => {
         if (!rgbaStr) return "rgba(255, 165, 0, " + alpha + ")";
         if (rgbaStr.startsWith("rgba")) {
@@ -18,9 +19,41 @@ export default function JodiUnit() {
     };
     const numericId = Number(id);
     const jodiNum = numericId ? (numericId % 10) : 1; // e.g. 391 -> 1, 392 -> 2
+    const floorNumber = numericId ? Math.floor(numericId / 100) : 2;
+    const isRefugeFloor = [6, 11, 16, 21, 26, 31, 36].includes(floorNumber);
 
-    const jodiUnits = data.flatMap((t: any) => t.jodi || []);
-    const typicalJodi = jodiUnits.find((u: any) => (u.id % 10) === jodiNum) || jodiUnits[0];
+    const towerId = location.state?.towerId || 1;
+    const tower = data.find((t: any) => t.id === towerId) || data[0];
+    const isZenia = tower.name === "ZENIA" || tower.id === 8;
+    const refugeFloor = (isZenia && isRefugeFloor) ? tower.floors?.find((f: any) => f.title === `FLOOR-${floorNumber}`) || tower.floors?.[1] : null;
+    const unit1 = refugeFloor?.units?.find((u: any) => u.name === "Unit No-1" || (u.id % 100) === 1);
+    const unit2 = refugeFloor?.units?.find((u: any) => u.name === "Unit No-2" || (u.id % 100) === 2);
+
+    const typicalJodi = (isZenia && isRefugeFloor && jodiNum === 1 && unit1) ? {
+        id: numericId,
+        name: "Unit No-1",
+        type: unit1.type,
+        size: unit1.size,
+        hoverColor: unit1.hoverColor,
+        polygons: [unit1.polygonPoints],
+        unitimage: unit1.unitimage,
+        image2D: unit1.image2D,
+        image2Dstatic: unit1.image2Dstatic,
+        rooms: unit1.rooms,
+        roomstatic: unit1.roomstatic
+    } : (isZenia && isRefugeFloor && jodiNum === 5 && unit2) ? {
+        id: numericId,
+        name: "Unit No-2",
+        type: unit2.type,
+        size: unit2.size,
+        hoverColor: unit2.hoverColor,
+        polygons: [unit2.polygonPoints],
+        unitimage: unit2.unitimage,
+        image2D: unit2.image2D,
+        image2Dstatic: unit2.image2Dstatic,
+        rooms: unit2.rooms,
+        roomstatic: unit2.roomstatic
+    } : (tower.jodi?.find((u: any) => (u.id % 10) === jodiNum) || tower.jodi?.[0] || data[0].jodi?.[0]);
 
     const singleUnit = typicalJodi ? {
         ...typicalJodi,
@@ -38,12 +71,10 @@ export default function JodiUnit() {
     // Interaction states for default (unitimage)
     const [selectedRoomDefault, setSelectedRoomDefault] = useState<number | null>(null);
     const [hoveredRoomDefault, setHoveredRoomDefault] = useState<number | null>(null);
-    const [clickedRoomDefault, setClickedRoomDefault] = useState<number | null>(null);
 
     // Interaction states for 2D (image2D / roomstatic)
     const [selectedRoom2D, setSelectedRoom2D] = useState<number | null>(null);
     const [hoveredRoom2D, setHoveredRoom2D] = useState<number | null>(null);
-    const [clickedRoom2D, setClickedRoom2D] = useState<number | null>(null);
 
     // fallback if unit not found
     if (!singleUnit) {
@@ -91,12 +122,12 @@ export default function JodiUnit() {
                                 let isHighlight = false;
 
                                 if (isDefaultLayout) {
-                                    if (selectedRoomDefault === room.id || clickedRoomDefault === room.id || hoveredRoomDefault === room.id) {
+                                    if (selectedRoomDefault === room.id || hoveredRoomDefault === room.id) {
                                         isHighlight = true;
                                     }
                                 } else {
                                     // 2D layout
-                                    if (selectedRoom2D === room.id || clickedRoom2D === room.id || hoveredRoom2D === room.id) {
+                                    if (selectedRoom2D === room.id || hoveredRoom2D === room.id) {
                                         isHighlight = true;
                                     }
                                 }
@@ -106,7 +137,6 @@ export default function JodiUnit() {
                                         key={room.id}
                                         onMouseEnter={() => isDefaultLayout ? setHoveredRoomDefault(room.id) : setHoveredRoom2D(room.id)}
                                         onMouseLeave={() => isDefaultLayout ? setHoveredRoomDefault(null) : setHoveredRoom2D(null)}
-                                        onClick={() => isDefaultLayout ? setClickedRoomDefault(room.id) : setClickedRoom2D(room.id)}
                                         className={`${isHighlight ? "" : bgClass} transition-all mb-1 ease-in-out duration-300 p-2 border rounded-lg flex justify-between items-center`}
                                         style={isHighlight ? { backgroundColor: getSolidColor(singleUnit.hoverColor, "0.9"), color: "black" } : undefined}
                                     >
@@ -156,15 +186,14 @@ export default function JodiUnit() {
                                         <polygon
                                             points={room.polygon}
                                             fill={
-                                                (clickedRoomDefault === room.id || selectedRoomDefault === room.id || hoveredRoomDefault === room.id)
+                                                (selectedRoomDefault === room.id || hoveredRoomDefault === room.id)
                                                     ? getSolidColor(singleUnit.hoverColor, "0.5")
                                                     : "transparent"
                                             }
                                             strokeWidth="4"
                                             onMouseEnter={() => setSelectedRoomDefault(room.id)}
                                             onMouseLeave={() => setSelectedRoomDefault(null)}
-                                            onClick={() => setClickedRoomDefault(room.id)}
-                                            style={{ cursor: "pointer", transition: "fill 0.3s ease-in-out, stroke 0.3s ease-in-out" }}
+                                            style={{ transition: "fill 0.3s ease-in-out, stroke 0.3s ease-in-out" }}
                                         />
                                     </Tooltip>
                                 ))}
@@ -194,15 +223,14 @@ export default function JodiUnit() {
                                         <polygon
                                             points={room.polygon}
                                             fill={
-                                                (clickedRoom2D === room.id || selectedRoom2D === room.id || hoveredRoom2D === room.id)
+                                                (selectedRoom2D === room.id || hoveredRoom2D === room.id)
                                                     ? getSolidColor(singleUnit.hoverColor, "0.5")
                                                     : "transparent"
                                             }
                                             strokeWidth="4"
                                             onMouseEnter={() => setSelectedRoom2D(room.id)}
                                             onMouseLeave={() => setSelectedRoom2D(null)}
-                                            onClick={() => setClickedRoom2D(room.id)}
-                                            style={{ cursor: "pointer", transition: "fill 0.3s ease-in-out, stroke 0.3s ease-in-out" }}
+                                            style={{ transition: "fill 0.3s ease-in-out, stroke 0.3s ease-in-out" }}
                                         />
                                     </Tooltip>
                                 ))}

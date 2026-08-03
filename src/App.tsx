@@ -8,7 +8,7 @@ import ProjectStatus_Golden from './GoldenWillows/ProjectStatus_Golden.tsx'
 import GalleryPageGolden from './GoldenWillows/GalleryPageGolden.tsx'
 import GoldenWillowsLayout from './GoldenWillows/GoldenWillowsLayout.tsx'
 import ProjectDetailsPage from './GoldenWillows/ProjectDetailsPage.tsx'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import MainTowerPage from './GoldenWillows/Towers_Golden/MainTowerPage.tsx'
 import FloorPage from './GoldenWillows/Towers_Golden/FloorPage.tsx'
 import UnitPage from './GoldenWillows/Towers_Golden/UnitPage.tsx'
@@ -19,13 +19,17 @@ import IrisJodiUnit from './GoldenWillows/iris_tower/JodiUnit.tsx'
 import Jasmine from './components/project_detail/jasmine.tsx'
 import Lavender from './components/project_detail/lavender.tsx'
 import Iris from './components/project_detail/iris.tsx';
+import Aster from './components/project_detail/aster.tsx'
+import Zenia from './components/project_detail/zenia.tsx'
+
 
 function App() {
+  const location = useLocation();
 
   const showNavbarGoldenWillows = ["/", "/project_highlights", "/location",
-    "/project_status", "/projectdetails", "/Jasmine", "/Lavender", "/iris"];
+    "/project_status", "/projectdetails", "/Jasmine", "/Lavender", "/iris", "/Aster", "/Zenia"];
 
-  const GoldenWillowsNav = showNavbarGoldenWillows.includes(location.pathname);
+  const GoldenWillowsNav = showNavbarGoldenWillows.includes(location.pathname) || location.pathname.startsWith("/tower_goldenwillows/");
   return (
     <>
 
@@ -41,6 +45,8 @@ function App() {
         <Route path="/Jasmine" element={<Jasmine />} />
         <Route path="/Lavender" element={<Lavender />} />
         <Route path="/iris" element={<Iris />} />
+        <Route path="/Aster" element={<Aster />} />
+        <Route path="/Zenia" element={<Zenia />} />
 
         <Route path="/tower_goldenwillows/:towerId" element={<MainTowerPage />} />
         <Route path="/golden_floor/:id" element={<FloorPage />} />

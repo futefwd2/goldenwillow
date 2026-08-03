@@ -4,7 +4,7 @@ import { Tooltip, Button, Modal, Box, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 // import { data } from '../../../data/GoldenWillowsData';
 import { data } from '../../data/GoldenWillowsData';
-import jasmineRefugeFloorPlan from "../../assets/jasmin_tower/Jasmine Tower plan Refuge.jpg";
+
 
 
 // import WithoutbgHeader from '../../../components/WithoutbgHeader';
@@ -32,7 +32,7 @@ export default function FloorPage() {
     const towerId = location.state?.towerId || 1;
     const tower = data.find((t) => t.id === towerId) || data[0];
 
-    const rawFloor = tower?.floors?.[0];
+    const rawFloor = (isRefugeFloor && tower?.floors?.[1]) ? tower?.floors?.[1] : tower?.floors?.[0];
     const singleFloor = rawFloor ? {
         ...rawFloor,
         id: floorNumber,
@@ -56,7 +56,7 @@ export default function FloorPage() {
         };
     });
 
-    const floorImage = isRefugeFloor ? (tower.refugeImage || jasmineRefugeFloorPlan) : singleFloor?.image;
+    const isZenia = tower?.name === "ZENIA" || tower?.id === 8;
 
     const [hoveredUnit, setHoveredUnit] = useState<number | null>(null);
     const [selectedUnit, setSelectedUnit] = useState<number | null>(null);
@@ -65,8 +65,16 @@ export default function FloorPage() {
         return sessionStorage.getItem("isJodiMode") === "true";
     });
 
-    // Disable Jodi mode on refuge floors
-    const activeJodiMode = isRefugeFloor ? false : isJodiMode;
+    // Disable Jodi mode on refuge floors or if the tower doesn't have jodi options (unless it's Zenia)
+    const activeJodiMode = (isZenia ? (!tower?.jodi || tower.jodi.length === 0) : (isRefugeFloor || !tower?.jodi || tower.jodi.length === 0)) ? false : isJodiMode;
+
+    const floorImage = isRefugeFloor
+        ? (activeJodiMode && (tower as any).jodiRefugeImage
+            ? (typeof (tower as any).jodiRefugeImage === 'object' ? ((tower as any).jodiRefugeImage as any)[floorNumber] : (tower as any).jodiRefugeImage)
+            : (typeof tower.refugeImage === 'object' ? (tower.refugeImage as any)[floorNumber] : tower.refugeImage))
+        : (activeJodiMode && (tower as any).jodiImage
+            ? (tower as any).jodiImage
+            : singleFloor?.image);
 
     console.log("singleFloor", singleFloor)
     if (!singleFloor) {
@@ -114,12 +122,11 @@ export default function FloorPage() {
                             <ul key={unit.id}>
                                 <li
                                     className={`
-                                        cursor-pointer transition-transform duration-200 mt-2 flex p-1 rounded-sm justify-between border-b pb-2 text-[12px]
+                                        transition-transform duration-200 mt-2 flex p-1 rounded-sm justify-between border-b pb-2 text-[12px]
                                         ${hoveredUnit === unit.id ? "scale-105 bg-slate-200" : "scale-100"}
                                     `}
                                     onMouseEnter={() => setHoveredUnit(unit.id)}
                                     onMouseLeave={() => setHoveredUnit(null)}
-                                    onClick={() => setSelectedUnit(unit.id)}
                                 >
                                     <p>{unit.name}</p> <p>{unit.type}</p>
                                 </li>
@@ -130,12 +137,11 @@ export default function FloorPage() {
                             <ul key={unit.id}>
                                 <li
                                     className={`
-                                        cursor-pointer transition-transform duration-200 mt-2 flex p-1 rounded-sm justify-between border-b pb-2 text-[12px]
+                                        transition-transform duration-200 mt-2 flex p-1 rounded-sm justify-between border-b pb-2 text-[12px]
                                         ${hoveredUnit === unit.id ? "scale-105 bg-slate-200" : "scale-100"}
                                     `}
                                     onMouseEnter={() => setHoveredUnit(unit.id)}
                                     onMouseLeave={() => setHoveredUnit(null)}
-                                    onClick={() => setSelectedUnit(unit.id)}
                                 >
                                     <p>{unit.name}</p> <p>{unit.type}</p>
                                 </li>
@@ -147,33 +153,15 @@ export default function FloorPage() {
 
 
                 <div className="mt-3 gap-4 flex flex-col justify-center items-center w-full">
-                    {activeJodiMode ? (
-                        <div className="flex items-center gap-2 w-full p-2 bg-[#F0EEEE] rounded">
-                            <span
-                                style={{
-                                    display: "inline-block",
-                                    width: "16px",
-                                    height: "16px",
-                                    backgroundColor: "#ffff00",
-                                    borderRadius: "2px",
-                                    flexShrink: 0
-                                }}
-                            />
-                            <span className="text-[12px] font-semibold text-gray-800">
-                                2BHK Premia & Grande Jodi Option
-                            </span>
-                        </div>
-                    ) : (
-                        Object.values(singleFloor.buttonSettings).map((btn, idx) => (
-                            <button
-                                key={idx}
-                                className="py-2 rounded-lg w-full"
-                                style={{ backgroundColor: btn.bgColor }}
-                            >
-                                {btn.text}
-                            </button>
-                        ))
-                    )}
+                    {Object.values(singleFloor.buttonSettings).map((btn: any, idx) => (
+                        <button
+                            key={idx}
+                            className="py-2 rounded-lg w-full"
+                            style={{ backgroundColor: btn.bgColor }}
+                        >
+                            {btn.text}
+                        </button>
+                    ))}
                 </div>
 
             </div>
@@ -193,41 +181,64 @@ export default function FloorPage() {
                     {activeJodiMode && mappedJodi ? (
                         mappedJodi.map((jodiUnit: any) => (
                             <g key={jodiUnit.id}>
-                                {jodiUnit.polygons.map((pts: string, idx: number) => (
-                                    <Tooltip
-                                        key={`${jodiUnit.id}-${idx}`}
-                                        title={jodiUnit.name}
-                                        placement="top"
-                                        slotProps={{
-                                            tooltip: {
-                                                sx: {
-                                                    backgroundColor: getSolidColor(jodiUnit.hoverColor),
-                                                    color: "#000000",
-                                                    fontSize: "14px",
-                                                    fontWeight: "normal",
-                                                    padding: "8px 16px",
-                                                    borderRadius: "4px",
-                                                    boxShadow: "0px 4px 10px rgba(0,0,0,0.15)",
+                                {jodiUnit.polygons.map((pts: string, idx: number) => {
+                                    const isJodi1 = jodiUnit.id % 10 === 1;
+                                    const name = (isZenia && isRefugeFloor && isJodi1)
+                                        ? (idx === 0 ? "Unit No-1" : "Unit No-2")
+                                        : jodiUnit.name;
+                                    const targetId = (isZenia && isRefugeFloor && isJodi1 && idx === 1)
+                                        ? (floorNumber * 100 + 95)
+                                        : jodiUnit.id;
+
+                                    const hoverColor = (isZenia && isRefugeFloor)
+                                        ? (isJodi1 ? "rgba(253,230,23,0.35)" : "rgba(230,46,230,0.35)")
+                                        : jodiUnit.hoverColor;
+
+                                    let points = pts;
+                                    if (isZenia && isRefugeFloor) {
+                                        const rawRefugeFloor = tower.floors?.find((f: any) => f.title === `FLOOR-${floorNumber}`) || tower.floors?.[1];
+                                        if (rawRefugeFloor && rawRefugeFloor.units) {
+                                            const uIdx = isJodi1 ? idx : (idx + 2);
+                                            points = rawRefugeFloor.units[uIdx]?.polygonPoints || pts;
+                                        }
+                                    }
+
+                                    return (
+                                        <Tooltip
+                                            key={`${jodiUnit.id}-${idx}`}
+                                            title={name}
+                                            placement="top"
+                                            slotProps={{
+                                                tooltip: {
+                                                    sx: {
+                                                        backgroundColor: getSolidColor(hoverColor),
+                                                        color: "#000000",
+                                                        fontSize: "14px",
+                                                        fontWeight: "normal",
+                                                        padding: "8px 16px",
+                                                        borderRadius: "4px",
+                                                        boxShadow: "0px 4px 10px rgba(0,0,0,0.15)",
+                                                    }
                                                 }
-                                            }
-                                        }}
-                                    >
-                                        <polygon
-                                            points={pts}
-                                            fill={
-                                                selectedUnit === jodiUnit.id
-                                                    ? "rgba(255,112,67,0.5)"
-                                                    : hoveredUnit === jodiUnit.id
-                                                        ? jodiUnit.hoverColor
-                                                        : "transparent"
-                                            }
-                                            style={{ cursor: "pointer" }}
-                                            onMouseEnter={() => setHoveredUnit(jodiUnit.id)}
-                                            onMouseLeave={() => setHoveredUnit(null)}
-                                            onClick={() => navigate(`/golden_jodi/${jodiUnit.id}`)}
-                                        />
-                                    </Tooltip>
-                                ))}
+                                            }}
+                                        >
+                                            <polygon
+                                                points={points}
+                                                fill={
+                                                    selectedUnit === targetId
+                                                        ? "rgba(255,112,67,0.5)"
+                                                        : hoveredUnit === targetId
+                                                            ? hoverColor
+                                                            : "transparent"
+                                                }
+                                                style={{ cursor: "pointer" }}
+                                                onMouseEnter={() => setHoveredUnit(targetId)}
+                                                onMouseLeave={() => setHoveredUnit(null)}
+                                                onClick={() => navigate(`/golden_jodi/${targetId}`, { state: { towerId: tower.id } })}
+                                            />
+                                        </Tooltip>
+                                    );
+                                })}
                             </g>
                         ))
                     ) : (
@@ -311,7 +322,7 @@ export default function FloorPage() {
                         Zoom Image
                     </Button>
 
-                    {!isRefugeFloor && (
+                    {(!isRefugeFloor || isZenia) && tower?.jodi && tower.jodi.length > 0 && (
                         <Button
                             fullWidth
                             onClick={() => {

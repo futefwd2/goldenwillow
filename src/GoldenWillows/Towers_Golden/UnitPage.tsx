@@ -20,16 +20,18 @@ export default function UnitPage() {
     const towerId = location.state?.towerId || 1;
     const tower = data.find((t) => t.id === towerId) || data[0];
     const floors = tower.floors;
-    const allUnits = floors.flatMap((f: any) => f.units);
 
     // Extract floor number and unit number from the dynamic ID (e.g. 301 -> floorNum = 3, unitNum = 1)
     const numericId = Number(id);
     const unitNum = numericId ? (numericId % 100) : 1;
+    const floorNum = numericId ? Math.floor(numericId / 100) : 2;
+    const refugeFloors = [6, 11, 16, 21, 26, 31, 36];
+    const isRefugeFloor = refugeFloors.includes(floorNum);
 
-    // Find the typical unit matching the unit number
-    const typicalUnit = allUnits.find((u: any) => (u.id % 100) === unitNum) || allUnits[0];
+    const rawFloor = (isRefugeFloor && floors[1]) ? floors[1] : floors[0];
+    const typicalUnit = rawFloor?.units.find((u: any) => (u.id % 100) === unitNum) || rawFloor?.units[0];
 
-    const singleUnit = typicalUnit ? {
+    const singleUnit: any = typicalUnit ? {
         ...typicalUnit,
         id: numericId,
     } : null;
@@ -45,12 +47,10 @@ export default function UnitPage() {
     // Interaction states for default (unitimage)
     const [selectedRoomDefault, setSelectedRoomDefault] = useState<number | null>(null);
     const [hoveredRoomDefault, setHoveredRoomDefault] = useState<number | null>(null);
-    const [clickedRoomDefault, setClickedRoomDefault] = useState<number | null>(null);
 
     // Interaction states for 2D (image2D / roomstatic)
     const [selectedRoom2D, setSelectedRoom2D] = useState<number | null>(null);
     const [hoveredRoom2D, setHoveredRoom2D] = useState<number | null>(null);
-    const [clickedRoom2D, setClickedRoom2D] = useState<number | null>(null);
 
     // fallback if unit not found
     if (!singleUnit) {
@@ -99,12 +99,12 @@ export default function UnitPage() {
                                 let isHighlight = false;
 
                                 if (isDefaultLayout) {
-                                    if (selectedRoomDefault === room.id || clickedRoomDefault === room.id || hoveredRoomDefault === room.id) {
+                                    if (selectedRoomDefault === room.id || hoveredRoomDefault === room.id) {
                                         isHighlight = true;
                                     }
                                 } else {
                                     // 2D layout
-                                    if (selectedRoom2D === room.id || clickedRoom2D === room.id || hoveredRoom2D === room.id) {
+                                    if (selectedRoom2D === room.id || hoveredRoom2D === room.id) {
                                         isHighlight = true;
                                     }
                                 }
@@ -114,7 +114,6 @@ export default function UnitPage() {
                                         key={room.id}
                                         onMouseEnter={() => isDefaultLayout ? setHoveredRoomDefault(room.id) : setHoveredRoom2D(room.id)}
                                         onMouseLeave={() => isDefaultLayout ? setHoveredRoomDefault(null) : setHoveredRoom2D(null)}
-                                        onClick={() => isDefaultLayout ? setClickedRoomDefault(room.id) : setClickedRoom2D(room.id)}
                                         className={`${isHighlight ? "" : bgClass} transition-all mb-1 ease-in-out duration-300 p-2 border rounded-lg flex justify-between items-center`}
                                         style={isHighlight ? { backgroundColor: getSolidColor(singleUnit.hoverColor, "0.9"), color: "black" } : undefined}
                                     >
@@ -164,15 +163,14 @@ export default function UnitPage() {
                                         <polygon
                                             points={room.polygon}
                                             fill={
-                                                (clickedRoomDefault === room.id || selectedRoomDefault === room.id || hoveredRoomDefault === room.id)
+                                                (selectedRoomDefault === room.id || hoveredRoomDefault === room.id)
                                                     ? getSolidColor(singleUnit.hoverColor, "0.5")
                                                     : "transparent"
                                             }
                                             strokeWidth="4"
                                             onMouseEnter={() => setSelectedRoomDefault(room.id)}
                                             onMouseLeave={() => setSelectedRoomDefault(null)}
-                                            onClick={() => setClickedRoomDefault(room.id)}
-                                            style={{ cursor: "pointer", transition: "fill 0.3s ease-in-out, stroke 0.3s ease-in-out" }}
+                                            style={{ transition: "fill 0.3s ease-in-out, stroke 0.3s ease-in-out" }}
                                         />
                                     </Tooltip>
                                 ))}
@@ -202,15 +200,14 @@ export default function UnitPage() {
                                         <polygon
                                             points={room.polygon}
                                             fill={
-                                                (clickedRoom2D === room.id || selectedRoom2D === room.id || hoveredRoom2D === room.id)
+                                                (selectedRoom2D === room.id || hoveredRoom2D === room.id)
                                                     ? getSolidColor(singleUnit.hoverColor, "0.5")
                                                     : "transparent"
                                             }
                                             strokeWidth="4"
                                             onMouseEnter={() => setSelectedRoom2D(room.id)}
                                             onMouseLeave={() => setSelectedRoom2D(null)}
-                                            onClick={() => setClickedRoom2D(room.id)}
-                                            style={{ cursor: "pointer", transition: "fill 0.3s ease-in-out, stroke 0.3s ease-in-out" }}
+                                            style={{ transition: "fill 0.3s ease-in-out, stroke 0.3s ease-in-out" }}
                                         />
                                     </Tooltip>
                                 ))}

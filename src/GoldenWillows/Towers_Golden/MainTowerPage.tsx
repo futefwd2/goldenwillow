@@ -72,7 +72,7 @@ export default function MainTowerPage() {
                     {/* Back Button */}
                     <div
                         onClick={handleBack}
-                        className="absolute top-2 left-2 p-2 bg-black/50 w-[55px] h-[55px] flex items-center justify-center rounded-full z-20 cursor-pointer hover:bg-black/70 transition"
+                        className="absolute z-20 bottom-24 md:bottom-52 lg:bottom-16 left-26 md:left-10 p-2 bg-black/50 w-[55px] h-[55px] flex items-center justify-center rounded-full cursor-pointer hover:bg-black/70 transition"
                     >
                         <IoReturnUpBackOutline size={40} color="white" />
                     </div>
