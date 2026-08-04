@@ -21,13 +21,14 @@ import Lavender from './components/project_detail/lavender.tsx'
 import Iris from './components/project_detail/iris.tsx';
 import Aster from './components/project_detail/aster.tsx'
 import Zenia from './components/project_detail/zenia.tsx'
+import Marigold from './components/project_detail/marigold.tsx'
 
 
 function App() {
   const location = useLocation();
 
   const showNavbarGoldenWillows = ["/", "/project_highlights", "/location",
-    "/project_status", "/projectdetails", "/Jasmine", "/Lavender", "/iris", "/Aster", "/Zenia"];
+    "/project_status", "/projectdetails", "/Jasmine", "/Lavender", "/iris", "/Aster", "/Zenia", "/Marigold"];
 
   const GoldenWillowsNav = showNavbarGoldenWillows.includes(location.pathname) || location.pathname.startsWith("/tower_goldenwillows/");
   return (
@@ -47,6 +48,7 @@ function App() {
         <Route path="/iris" element={<Iris />} />
         <Route path="/Aster" element={<Aster />} />
         <Route path="/Zenia" element={<Zenia />} />
+        <Route path="/Marigold" element={<Marigold />} />
 
         <Route path="/tower_goldenwillows/:towerId" element={<MainTowerPage />} />
         <Route path="/golden_floor/:id" element={<FloorPage />} />
@@ -72,6 +74,11 @@ function App() {
         <Route path="/zenia_floor/:id" element={<FloorPage />} />
         <Route path="/zenia_unit/:id" element={<UnitPage />} />
         <Route path="/zenia_jodi/:id" element={<JodiUnit />} />
+
+        {/* Marigold Tower */}
+        <Route path="/marigold_floor/:id" element={<FloorPage />} />
+        <Route path="/marigold_unit/:id" element={<UnitPage />} />
+        <Route path="/marigold_jodi/:id" element={<JodiUnit />} />
 
         <Route path="/iris_floor/:id" element={<IrisFloorPage />} />
         <Route path="/iris_unit/:id" element={<IrisUnitPage />} />
