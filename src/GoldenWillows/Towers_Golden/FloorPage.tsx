@@ -33,6 +33,11 @@ export default function FloorPage() {
     const tower = data.find((t) => t.id === towerId) || data[0];
     const towerName = tower.name.toLowerCase();
     const destinationTower = towerName === "acacia" ? "golden" : towerName;
+    const isMarigold = towerName === "marigold";
+    const isRefugeArea = (unitId: number) => {
+        if (isMarigold) return false;
+        return isRefugeFloor && (unitId % 100 === 6);
+    };
 
     const rawFloor = (isRefugeFloor && tower?.floors?.[1]) ? tower?.floors?.[1] : tower?.floors?.[0];
     const singleFloor = rawFloor ? {
@@ -182,14 +187,14 @@ export default function FloorPage() {
                             )}
                         </>
                     ) : (
-                        singleFloor.units.filter((unit: any) => !(isRefugeFloor && unit.id % 100 === 6)).map((unit: any) => (
+                        singleFloor.units.filter((unit: any) => !isRefugeArea(unit.id)).map((unit: any) => (
                             <ul key={unit.id}>
                                 <li
                                     className={`
                                         transition-transform duration-200 mt-2 flex p-1 rounded-sm justify-between border-b pb-2 text-[12px]
                                         ${hoveredUnit === unit.id ? "scale-105 bg-slate-200" : "scale-100"}
                                     `}
-                                    onMouseEnter={() => { if (!(isRefugeFloor && unit.id % 100 === 6)) setHoveredUnit(unit.id); }}
+                                    onMouseEnter={() => { if (!isRefugeArea(unit.id)) setHoveredUnit(unit.id); }}
                                     onMouseLeave={() => setHoveredUnit(null)}
                                 >
                                     <p>{unit.name}</p> <p>{unit.type}</p>
@@ -201,11 +206,11 @@ export default function FloorPage() {
                 </div>
 
 
-                <div className="mt-3 gap-4 flex flex-col justify-center items-center w-full">
-                    {Object.values(singleFloor.buttonSettings).map((btn: any, idx) => (
+                <div className="mt-3 w-full flex flex-col gap-2 justify-center items-center">
+                    {Object.values(activeJodiMode && (singleFloor as any).jodiButtonSettings ? (singleFloor as any).jodiButtonSettings : singleFloor.buttonSettings).map((btn: any, idx) => (
                         <button
                             key={idx}
-                            className="py-2 rounded-lg w-full"
+                            className="py-1.5 px-3 rounded-lg text-xs font-semibold text-black text-center w-full shadow-sm"
                             style={{ backgroundColor: btn.bgColor }}
                         >
                             {btn.text}
@@ -336,7 +341,7 @@ export default function FloorPage() {
                         singleFloor.units.map((unit: any) => (
                             <Tooltip
                                 key={unit.id}
-                                title={isRefugeFloor && unit.id % 100 === 6 ? "" : `${unit.name} (${unit.type})`}
+                                title={isRefugeArea(unit.id) ? "" : `${unit.name} (${unit.type})`}
                                 placement="top"
                                 slotProps={{
                                     tooltip: {
@@ -355,10 +360,10 @@ export default function FloorPage() {
                                 <polygon
                                     points={unit.polygonPoints}
                                     fill={hoveredUnit === unit.id ? unit.hoverColor : "transparent"}
-                                    style={{ cursor: isRefugeFloor && unit.id % 100 === 6 ? "default" : "pointer" }}
-                                    onMouseEnter={() => { if (!(isRefugeFloor && unit.id % 100 === 6)) setHoveredUnit(unit.id); }}
+                                    style={{ cursor: isRefugeArea(unit.id) ? "default" : "pointer" }}
+                                    onMouseEnter={() => { if (!isRefugeArea(unit.id)) setHoveredUnit(unit.id); }}
                                     onMouseLeave={() => setHoveredUnit(null)}
-                                    onClick={() => { if (!(isRefugeFloor && unit.id % 100 === 6)) navigate(`/${destinationTower}_unit/${unit.id}`, { state: { towerId: tower.id } }); }}
+                                    onClick={() => { if (!isRefugeArea(unit.id)) navigate(`/${destinationTower}_unit/${unit.id}`, { state: { towerId: tower.id } }); }}
                                 />
                             </Tooltip>
                         ))
