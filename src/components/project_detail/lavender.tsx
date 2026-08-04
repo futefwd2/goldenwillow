@@ -79,7 +79,7 @@ export default function Lavender() {
                   const refugeFloors = [6, 11, 16, 21, 26, 31, 36];
                   const isRefuge = refugeFloors.includes(floorNum);
                   const floorParam = isRefuge ? `${floorNum}-Refuge` : `${floorNum}`;
-                  navigate(`/golden_floor/${floorParam}`, { state: { floorName: floor.name, towerId: 2 } });
+                  navigate(`/lavender_floor/${floorParam}`, { state: { floorName: floor.name, towerId: 2 } });
                 }}
               />
 
