@@ -22,11 +22,11 @@ const getActiveHoverColor = (item: any, isRefuge: boolean) =>
     isRefuge && item.refugeHoverColor ? item.refugeHoverColor : item.hoverColor;
 
 // Parses "0 0 W H" -> { w, h } safely
-const parseViewBox = (vb?: string) => {
-    if (!vb) return { w: 3000, h: 1688 };
-    const parts = vb.split(" ").map(Number);
-    return { w: parts[2] || 3000, h: parts[3] || 1688 };
-};
+// const parseViewBox = (vb?: string) => {
+//     if (!vb) return { w: 3000, h: 1688 };
+//     const parts = vb.split(" ").map(Number);
+//     return { w: parts[2] || 3000, h: parts[3] || 1688 };
+// };
 
 export default function FloorPage() {
     const { id } = useParams<{ id: string }>();
@@ -80,7 +80,10 @@ export default function FloorPage() {
     // ─── Floor plan image ───
     // Standard: typical floor image or refuge floor image
     // Jodi: typical jodi tower plan or refuge jodi tower plan
-    const standardImage = isRefugeFloor ? (tower.refugeImage || irisRefugeFloorPlan) : singleFloor?.image;
+    const refugeImg = typeof tower.refugeImage === 'object'
+        ? (tower.refugeImage as any)[floorNumber]
+        : tower.refugeImage;
+    const standardImage = isRefugeFloor ? (refugeImg || irisRefugeFloorPlan) : singleFloor?.image;
     const jodiImage = isRefugeFloor ? irisJodiRefugePlan : irisJodiTypicalPlan;
     const floorImage = activeJodiMode ? jodiImage : standardImage;
 

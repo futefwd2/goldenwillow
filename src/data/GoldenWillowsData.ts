@@ -312,7 +312,7 @@ import marigoldJodiTypical2dStaticUnit4 from "../assets/Marigold/jodi/2d static/
 import marigoldJodiTypical2dStaticUnit5_6 from "../assets/Marigold/jodi/2d static/unit 5& unit 6.jpg";
 
 
-import acaciatower from "../assets/goldenwillows/master_goldenwillows.jpg"
+// import acaciatower from "../assets/goldenwillows/master_goldenwillows.jpg"
 import acaciaImg from "../assets/acacia_tower/acacia tower image.jpg";
 
 import acaciaFloorPlan from "../assets/acacia_tower/Acacia typical floor.jpg";
