@@ -15,6 +15,7 @@ import UnitPage from './GoldenWillows/Towers_Golden/UnitPage.tsx'
 import JodiUnit from './GoldenWillows/Towers_Golden/JodiUnit.tsx'
 import Jasmine from './components/project_detail/jasmine.tsx'
 import Lavender from './components/project_detail/lavender.tsx'
+import Acacia from './components/project_detail/asacia.tsx'
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route path="/projectdetails" element={<ProjectDetailsPage />} />
         <Route path="/Jasmine" element={<Jasmine />} />
         <Route path="/Lavender" element={<Lavender />} />
+        <Route path="/Acacia" element={<Acacia />} />
 
         <Route path="/tower_goldenwillows/:towerId" element={<MainTowerPage />} />
         <Route path="/golden_floor/:id" element={<FloorPage />} />
