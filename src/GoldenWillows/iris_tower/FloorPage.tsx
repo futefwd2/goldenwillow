@@ -147,16 +147,9 @@ export default function FloorPage() {
                     {activeUnits.map((unit: any) => (
                         <ul key={unit.id}>
                             <li
-                                className={`cursor-pointer transition-transform duration-200 mt-2 flex p-1 rounded-sm justify-between border-b pb-2 text-[12px] ${hoveredUnit === unit.id ? "scale-105 bg-slate-200" : "scale-100"}`}
+                                className={`transition-transform duration-200 mt-2 flex p-1 rounded-sm justify-between border-b pb-2 text-[12px] ${hoveredUnit === unit.id ? "scale-105 bg-slate-200" : "scale-100"}`}
                                 onMouseEnter={() => setHoveredUnit(unit.id)}
                                 onMouseLeave={() => setHoveredUnit(null)}
-                                onClick={() => {
-                                    if (activeJodiMode) {
-                                        navigate(`/iris_jodi/${unit.id}`, { state: { towerId: tower.id } });
-                                    } else {
-                                        navigate(`/iris_unit/${unit.id}`, { state: { towerId: tower.id } });
-                                    }
-                                }}
                             >
                                 <p>{unit.name}</p>
                                 <p>{unit.type}</p>

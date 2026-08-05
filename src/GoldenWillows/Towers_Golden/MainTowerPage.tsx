@@ -43,7 +43,7 @@ export default function MainTowerPage() {
                                     }}
                                     onMouseEnter={() => setHoveredId(floor.id)}
                                     onMouseLeave={() => setHoveredId(null)}
-                                    onClick={() => {
+                                    onDoubleClick={() => {
                                         const floorNum = parseInt(floor.name.replace("Floor ", ""));
                                         const refugeFloors = [6, 11, 16, 21, 26, 31, 36];
                                         const isRefuge = refugeFloors.includes(floorNum);

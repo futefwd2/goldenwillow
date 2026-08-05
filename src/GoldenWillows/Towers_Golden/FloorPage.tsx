@@ -290,7 +290,7 @@ export default function FloorPage() {
                                                 style={{ cursor: "pointer" }}
                                                 onMouseEnter={() => setHoveredUnit(targetId)}
                                                 onMouseLeave={() => setHoveredUnit(null)}
-                                                onClick={() => navigate(`/${destinationTower}_jodi/${targetId}`, { state: { towerId: tower.id } })}
+                                                onDoubleClick={() => navigate(`/${destinationTower}_jodi/${targetId}`, { state: { towerId: tower.id } })}
                                             />
                                         </Tooltip>
                                     );
@@ -314,7 +314,7 @@ export default function FloorPage() {
                                                 style={{ cursor: "pointer" }}
                                                 onMouseEnter={() => setHoveredUnit(jodiUnit.id)}
                                                 onMouseLeave={() => setHoveredUnit(null)}
-                                                onClick={() => navigate(`/${destinationTower}_jodi/${jodiUnit.id}`, { state: { towerId: tower.id } })}
+                                                onDoubleClick={() => navigate(`/${destinationTower}_jodi/${jodiUnit.id}`, { state: { towerId: tower.id } })}
                                             />
                                         </Tooltip>
                                     ))}
@@ -332,7 +332,7 @@ export default function FloorPage() {
                                         style={{ cursor: "pointer" }}
                                         onMouseEnter={() => setHoveredUnit(unit5.id)}
                                         onMouseLeave={() => setHoveredUnit(null)}
-                                        onClick={() => navigate(`/${destinationTower}_unit/${unit5.id}`, { state: { towerId: tower.id } })}
+                                        onDoubleClick={() => navigate(`/${destinationTower}_unit/${unit5.id}`, { state: { towerId: tower.id } })}
                                     />
                                 </Tooltip>
                             )}
@@ -363,7 +363,7 @@ export default function FloorPage() {
                                     style={{ cursor: isRefugeArea(unit.id) ? "default" : "pointer" }}
                                     onMouseEnter={() => { if (!isRefugeArea(unit.id)) setHoveredUnit(unit.id); }}
                                     onMouseLeave={() => setHoveredUnit(null)}
-                                    onClick={() => { if (!isRefugeArea(unit.id)) navigate(`/${destinationTower}_unit/${unit.id}`, { state: { towerId: tower.id } }); }}
+                                    onDoubleClick={() => { if (!isRefugeArea(unit.id)) navigate(`/${destinationTower}_unit/${unit.id}`, { state: { towerId: tower.id } }); }}
                                 />
                             </Tooltip>
                         ))
