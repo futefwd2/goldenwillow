@@ -53,9 +53,9 @@ function App() {
         <Route path="/Marigold" element={<Marigold />} />
 
         <Route path="/tower_goldenwillows/:towerId" element={<MainTowerPage />} />
-        <Route path="/golden_floor/:id" element={<FloorPage />} />
-        <Route path="/golden_unit/:id" element={<UnitPage />} />
-        <Route path="/golden_jodi/:id" element={<JodiUnit />} />
+        <Route path="/acacia_floor/:id" element={<FloorPage />} />
+        <Route path="/acacia_unit/:id" element={<UnitPage />} />
+        <Route path="/acacia_jodi/:id" element={<JodiUnit />} />
 
         {/* Jasmine Tower */}
         <Route path="/jasmine_floor/:id" element={<FloorPage />} />

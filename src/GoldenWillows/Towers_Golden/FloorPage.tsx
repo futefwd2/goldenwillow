@@ -32,7 +32,7 @@ export default function FloorPage() {
     const towerId = location.state?.towerId || 1;
     const tower = data.find((t) => t.id === towerId) || data[0];
     const towerName = tower.name.toLowerCase();
-    const destinationTower = towerName === "acacia" ? "golden" : towerName;
+    const destinationTower = towerName;
     const isMarigold = towerName === "marigold";
     const isRefugeArea = (unitId: number) => {
         if (isMarigold) return false;
