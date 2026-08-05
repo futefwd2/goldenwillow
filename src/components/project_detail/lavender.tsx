@@ -93,24 +93,24 @@ export default function Lavender() {
               >
                 {/* Tooltip base arrow pointing left */}
                 <polygon
-                  points={`${xMax + 20},${yCenter - 8} ${xMax + 20},${yCenter + 8} ${xMax + 5},${yCenter}`}
+                  points={`${xMax + 20},${yCenter - 11} ${xMax + 20},${yCenter + 11} ${xMax + 5},${yCenter}`}
                   fill="#fdaf17"
                 />
                 {/* Tooltip rounded rectangle */}
                 <rect
                   x={xMax + 20}
-                  y={yCenter - 25}
-                  width="180"
-                  height="50"
-                  rx="8"
+                  y={yCenter - 34}
+                  width="240"
+                  height="68"
+                  rx="10"
                   fill="#fdaf17"
                 />
                 {/* Tooltip text */}
                 <text
-                  x={xMax + 110}
-                  y={yCenter + 7}
+                  x={xMax + 140}
+                  y={yCenter + 10}
                   fill="#ffffff"
-                  fontSize="22"
+                  fontSize="30"
                   fontWeight="bold"
                   textAnchor="middle"
                   style={{ fontFamily: "'Outfit', 'Inter', sans-serif" }}
